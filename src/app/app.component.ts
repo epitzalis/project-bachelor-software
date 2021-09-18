@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common'
+import { Component, Inject } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'project-bachelor-software';
+
+  constructor(
+    private readonly translateService: TranslateService,
+    @Inject(DOCUMENT) private document: Document
+  ) {
+    this.setlanguage()
+  }
+
+  private setlanguage(): void {
+    this.translateService.setDefaultLang('en')
+    const navigator = this.document.defaultView.navigator
+    const userLang = navigator.language
+    if (userLang) {
+      const language = userLang.substring(0, 2)
+      this.translateService.use(language)
+    }
+  }
+
 }
