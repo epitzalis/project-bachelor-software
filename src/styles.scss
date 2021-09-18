@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+.flex-full {
+    flex-basis: 100%;
+}
+
+.flex-half {
+    flex-basis: 50%;
+}
+
+.flex-quarter {
+    flex-basis: 25%;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column-gap {
+    column-gap: 10px;
+}
+
+.flex-row-gap {
+    row-gap: 10px;
+}

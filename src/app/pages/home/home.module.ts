@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { CalculatorModule } from '@components/calculator/calculator.module'
 import { HomeComponent } from './home.component'
 import { HomeRoutingModule } from './home-routing.module'
 
@@ -10,6 +11,7 @@ import { HomeRoutingModule } from './home-routing.module'
   imports: [
     CommonModule,
     HomeRoutingModule,
+    CalculatorModule,
   ],
   exports: [
     HomeComponent,
