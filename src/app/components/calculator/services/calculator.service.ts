@@ -48,6 +48,27 @@ export class CalculatorService {
     return arrayData
   }
 
+  public fillInitialValues(arrayData: string[][], usedVariables: string[]): string[][] {
+    const arrayDataFilled = arrayData
+    let numberUnfilledVariables = usedVariables.length
+    let numberConsecutiveTrues = 1
+    for (let i = numberUnfilledVariables; i !== 0; i -= 1) {
+      let counterConsecutiveTrues = 0
+      let actualValue = true
+      for (let j = 1; j < arrayDataFilled.length; j += 1) {
+        if (numberConsecutiveTrues === counterConsecutiveTrues) {
+          counterConsecutiveTrues = 0
+          actualValue = !actualValue
+        }
+        arrayDataFilled[j][numberUnfilledVariables - 1] = actualValue ? '1' : '0'
+        counterConsecutiveTrues += 1
+      }
+      numberUnfilledVariables -= 1
+      numberConsecutiveTrues *= 2
+    }
+    return arrayDataFilled
+  }
+
   private getNumberResults(numberVariables: number): number {
     return Math.pow(2, numberVariables)
   }

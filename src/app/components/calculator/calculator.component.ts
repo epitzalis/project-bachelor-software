@@ -52,6 +52,8 @@ export class CalculatorComponent {
         let arrayData: string[][] = [headData]
         // Create all empty array entries
         arrayData = this.calculatorService.createResultEntries(arrayData, usedVariables)
+        // Fill the array with true or false values of each variable
+        arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
         // TODO
       }
     }
