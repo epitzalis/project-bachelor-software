@@ -49,7 +49,9 @@ export class CalculatorComponent {
       if (usedVariables.length > 0) {
         // Create first level with titles
         const headData = this.calculatorService.getHeadArrayData(universalValue, usedVariables)
-        const arrayData: string[][] = [headData]
+        let arrayData: string[][] = [headData]
+        // Create all empty array entries
+        arrayData = this.calculatorService.createResultEntries(arrayData, usedVariables)
         // TODO
       }
     }

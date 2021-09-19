@@ -36,4 +36,20 @@ export class CalculatorService {
     return headData
   }
 
+  public createResultEntries(arrayData: string[][], usedVariables: string[]): string[][] {
+    const numberResults = this.getNumberResults(usedVariables.length)
+    for (let i = 0; i < numberResults; i += 1) {
+      const row = []
+      for (let j = 0; j < usedVariables.length + 1; j += 1) {
+        row.push([])
+      }
+      arrayData.push(row)
+    }
+    return arrayData
+  }
+
+  private getNumberResults(numberVariables: number): number {
+    return Math.pow(2, numberVariables)
+  }
+
 }
