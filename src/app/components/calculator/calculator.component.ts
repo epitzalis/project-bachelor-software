@@ -46,7 +46,12 @@ export class CalculatorComponent {
     if (this.valueCalculator) {
       const universalValue = this.calculatorService.convertToUniversal(this.valueCalculator)
       const usedVariables = this.calculatorService.getUsedVariables(universalValue)
-      // TODO
+      if (usedVariables.length > 0) {
+        // Create first level with titles
+        const headData = this.calculatorService.getHeadArrayData(universalValue, usedVariables)
+        const arrayData: string[][] = [headData]
+        // TODO
+      }
     }
   }
 }
