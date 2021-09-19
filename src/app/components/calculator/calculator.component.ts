@@ -45,6 +45,7 @@ export class CalculatorComponent {
   public onCalculate(): void {
     if (this.valueCalculator) {
       const universalValue = this.calculatorService.convertToUniversal(this.valueCalculator)
+      const usedVariables = this.calculatorService.getUsedVariables(universalValue)
       // TODO
     }
   }

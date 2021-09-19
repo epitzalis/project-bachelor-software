@@ -17,4 +17,14 @@ export class CalculatorService {
     return originalValue
   }
 
+  public getUsedVariables(universalValue: string): string[] {
+    let usedVariables = []
+    universalVariables.forEach((variable: string) => {
+      if (universalValue.includes(variable)) {
+        usedVariables.push(variable)
+      }
+    })
+    return usedVariables
+  }
+
 }
