@@ -1,4 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+/* Init Bulma Imports */
+@import "bulma/sass/utilities/_all.sass";
+@import "bulma/sass/elements/button.sass";
+/* End Bulma Imports */
 
 .flex-full {
     flex-basis: 100%;

@@ -18,8 +18,7 @@ export class CalculatorService {
   }
 
   public getUsedVariables(universalValue: string): string[] {
-    return universalVariables.filter((variable: string) => 
-                                    universalValue.includes(variable))
+    return universalVariables.filter((variable: string) => universalValue.includes(variable))
   }
 
   public getHeadArrayData(universalValue: string, usedVariables: string[]): string[] {
