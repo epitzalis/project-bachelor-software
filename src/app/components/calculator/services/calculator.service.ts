@@ -18,13 +18,8 @@ export class CalculatorService {
   }
 
   public getUsedVariables(universalValue: string): string[] {
-    let usedVariables = []
-    universalVariables.forEach((variable: string) => {
-      if (universalValue.includes(variable)) {
-        usedVariables.push(variable)
-      }
-    })
-    return usedVariables
+    return universalVariables.filter((variable: string) => 
+                                    universalValue.includes(variable))
   }
 
   public getHeadArrayData(universalValue: string, usedVariables: string[]): string[] {
