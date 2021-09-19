@@ -69,6 +69,23 @@ export class CalculatorService {
     return arrayDataFilled
   }
 
+  public calculateArrayData(arrayData: string[][]): string[][] {
+    const arrayCalculated = arrayData
+    const headData = arrayData[0]
+    const sentence = headData[headData.length - 1]
+    for (let i = 1; i < arrayCalculated.length; i += 1) {
+      let mappedSentence = sentence
+      for (let j = 0; j < arrayCalculated[i].length - 1; j += 1) {
+        const variableName = headData[j]
+        const variableValue = arrayCalculated[i][j]
+        mappedSentence = this.utilService.replaceAll(mappedSentence, variableName, variableValue)
+      }
+      const evaluationResult = eval(mappedSentence) > 0 ? '1' : '0'
+      arrayCalculated[i][arrayCalculated[i].length-1] = evaluationResult
+    }
+    return arrayCalculated
+  }
+
   private getNumberResults(numberVariables: number): number {
     return Math.pow(2, numberVariables)
   }

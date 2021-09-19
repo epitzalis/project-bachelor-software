@@ -54,6 +54,8 @@ export class CalculatorComponent {
         arrayData = this.calculatorService.createResultEntries(arrayData, usedVariables)
         // Fill the array with true or false values of each variable
         arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
+        // Calculare array data
+        arrayData = this.calculatorService.calculateArrayData(arrayData)
         // TODO
       }
     }
