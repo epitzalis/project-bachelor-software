@@ -2,7 +2,7 @@
   <div class="row">
     <input
       #inputCalculator
-      class="flex-full"
+      class="flex-full input"
       type="text"
       onCopy="return false"
       onDrag="return false"
@@ -15,33 +15,39 @@
 
   <div class="row">
     <div class="flex-half flex-container-row flex-column-gap">
-      <button class="flex-half btn-clear" (click)="onClear()">AC</button>
-      <button class="flex-half btn-back" (click)="onBack()">DEL</button>
+      <button class="flex-half btn-clear button is-danger" (click)="onClear()">
+        AC
+      </button>
+      <button class="flex-half btn-back button is-warning" (click)="onBack()">
+        DEL
+      </button>
     </div>
-    <button class="flex-half" (click)="onCalculate()">=</button>
+    <button class="flex-half button is-success" (click)="onCalculate()">
+      =
+    </button>
   </div>
 
   <div class="row">
     <button
-      class="flex-quarter"
+      class="flex-quarter button"
       (click)="onAddCharacter(typeCalculator === 'boole' ? 'a' : 'p')"
     >
       {{ typeCalculator === "boole" ? "a" : "p" }}
     </button>
     <button
-      class="flex-quarter"
+      class="flex-quarter button"
       (click)="onAddCharacter(typeCalculator === 'boole' ? 'b' : 'q')"
     >
       {{ typeCalculator === "boole" ? "b" : "q" }}
     </button>
     <button
-      class="flex-quarter"
+      class="flex-quarter button"
       (click)="onAddCharacter(typeCalculator === 'boole' ? 'c' : 'r')"
     >
       {{ typeCalculator === "boole" ? "c" : "r" }}
     </button>
     <button
-      class="flex-quarter"
+      class="flex-quarter button"
       (click)="onAddCharacter(typeCalculator === 'boole' ? 'd' : 's')"
     >
       {{ typeCalculator === "boole" ? "d" : "s" }}
@@ -50,20 +56,20 @@
 
   <div class="row">
     <button
-      class="flex-half"
+      class="flex-half button"
       (click)="onAddCharacter(typeCalculator === 'boole' ? '¬' : '~')"
     >
       {{ typeCalculator === "boole" ? "¬" : "~" }}
     </button>
     <div class="flex-half flex-container-row flex-column-gap">
       <button
-        class="flex-half"
+        class="flex-half button"
         (click)="onAddCharacter(typeCalculator === 'boole' ? '+' : 'v')"
       >
         {{ typeCalculator === "boole" ? "+" : "v" }}
       </button>
       <button
-        class="flex-half"
+        class="flex-half button"
         (click)="onAddCharacter(typeCalculator === 'boole' ? 'x' : '^')"
       >
         {{ typeCalculator === "boole" ? "x" : "^" }}
@@ -72,7 +78,7 @@
   </div>
 
   <div class="row">
-    <button class="flex-half" (click)="onAddCharacter('(')">(</button>
-    <button class="flex-half" (click)="onAddCharacter(')')">)</button>
+    <button class="flex-half button" (click)="onAddCharacter('(')">(</button>
+    <button class="flex-half button" (click)="onAddCharacter(')')">)</button>
   </div>
 </div>
