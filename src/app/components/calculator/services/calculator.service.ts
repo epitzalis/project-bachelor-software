@@ -23,12 +23,7 @@ export class CalculatorService {
   }
 
   public getHeadArrayData(universalValue: string, usedVariables: string[]): string[] {
-    const headData: string[] = []
-    usedVariables.forEach((variable: string) => {
-      headData.push(variable)
-    })
-    headData.push(universalValue)
-    return headData
+    return [...usedVariables, universalValue]
   }
 
   public createResultEntries(arrayData: string[][], usedVariables: string[]): string[][] {
