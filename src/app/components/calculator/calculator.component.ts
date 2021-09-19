@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 import {
   Component, ElementRef, Input, Renderer2, ViewChild,
 } from '@angular/core'
 import { Calculator } from './models/calculator.dto'
+import { CalculatorService } from './services/calculator.service'
 
 @Component({
   selector: 'app-calculator',
@@ -14,6 +17,7 @@ export class CalculatorComponent {
   @ViewChild('inputCalculator', { static: false }) inputCalculator: ElementRef<HTMLInputElement>
 
   constructor(
+    private readonly calculatorService: CalculatorService,
     private readonly renderer: Renderer2,
   ) {}
 
@@ -40,6 +44,7 @@ export class CalculatorComponent {
 
   public onCalculate(): void {
     if (this.valueCalculator) {
+      const universalValue = this.calculatorService.convertToUniversal(this.valueCalculator)
       // TODO
     }
   }

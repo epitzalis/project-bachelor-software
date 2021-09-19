@@ -7,7 +7,8 @@ export enum ConversionTypeCalculator {
     's' = 'd',
     '~' = '¬',
     'v' = '+',
-    '^' = 'x',
+    '^' = '*',
+    'x' = '*',
 }
 
 export const universalVariables = ['a', 'b', 'c', 'd']
