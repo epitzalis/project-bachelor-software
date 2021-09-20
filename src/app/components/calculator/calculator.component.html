@@ -1,4 +1,4 @@
-<div class="calculator flex-container-column flex-row-gap">
+<div class="calculator box flex-container-column flex-row-gap">
   <div class="row">
     <input
       #inputCalculator
@@ -10,7 +10,7 @@
       onPaste="return false"
       onkeypress="return false"
       autocomplete="off"
-    />
+    /><!-- is-danger -->
   </div>
 
   <div class="row">
@@ -81,4 +81,9 @@
     <button class="flex-half button" (click)="onAddCharacter('(')">(</button>
     <button class="flex-half button" (click)="onAddCharacter(')')">)</button>
   </div>
+</div>
+
+<div class="notification is-warning is-size-5">
+  <!-- <button class="delete"></button> -->
+  Ha introducido una sentencia incorrecta
 </div>
