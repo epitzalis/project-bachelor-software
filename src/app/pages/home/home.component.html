@@ -1,3 +1,26 @@
-<h1>Home component</h1>
+<h1>Home</h1>
 
-<app-calculator></app-calculator>
+<div class="container">
+  <div class="tabs is-large">
+    <ul>
+      <li [class.is-active]="isBooleSelected" (click)="isBooleSelected = true">
+        <a>Boole</a>
+      </li>
+      <li
+        [class.is-active]="!isBooleSelected"
+        (click)="isBooleSelected = false"
+      >
+        <a>Proposition</a>
+      </li>
+    </ul>
+  </div>
+
+  <app-calculator
+    [hidden]="!isBooleSelected"
+    typeCalculator="boole"
+  ></app-calculator>
+  <app-calculator
+    [hidden]="isBooleSelected"
+    typeCalculator="proposition"
+  ></app-calculator>
+</div>
