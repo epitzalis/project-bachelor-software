@@ -1,1 +1,5 @@
-<h1>Result</h1>
+<ng-container *ngIf="typeCalculator && arrayData">
+  <h1>Result {{ typeCalculator }}</h1>
+
+  <pre>{{ arrayData | json }}</pre>
+</ng-container>

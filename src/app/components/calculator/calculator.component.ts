@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-unused-vars */
 import {
   Component, ElementRef, Input, Renderer2, ViewChild,
 } from '@angular/core'
-import { Calculator } from './models/calculator.dto'
+import { NavigationService } from '@services/navigation.service'
+import { Calculator } from '@models/calculator.dto'
 import { CalculatorService } from './services/calculator.service'
 
 @Component({
@@ -18,6 +17,7 @@ export class CalculatorComponent {
 
   constructor(
     private readonly calculatorService: CalculatorService,
+    private readonly navigationService: NavigationService,
     private readonly renderer: Renderer2,
   ) {}
 
@@ -56,8 +56,7 @@ export class CalculatorComponent {
         arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
         // Calculare array data
         arrayData = this.calculatorService.calculateArrayData(arrayData)
-        alert(arrayData)
-        // TODO
+        this.navigationService.toResult(this.typeCalculator, arrayData)
       }
     }
   }

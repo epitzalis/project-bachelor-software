@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { UtilService } from '@services/util.service';
-import { ConversionTypeCalculator, universalVariables } from '../models/calculator.dto';
+import { ConversionTypeCalculator, universalVariables } from '@models/calculator.dto';
 import { create, all } from 'mathjs'
 @Injectable()
 export class CalculatorService {
