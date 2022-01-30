@@ -3,13 +3,10 @@
 <div class="container">
   <div class="tabs is-large">
     <ul>
-      <li [class.is-active]="isBooleSelected" (click)="isBooleSelected = true">
+      <li [class.is-active]="isBooleSelected" (click)="onChangeSelect(true)">
         <a>Boole</a>
       </li>
-      <li
-        [class.is-active]="!isBooleSelected"
-        (click)="isBooleSelected = false"
-      >
+      <li [class.is-active]="!isBooleSelected" (click)="onChangeSelect(false)">
         <a>Proposition</a>
       </li>
     </ul>

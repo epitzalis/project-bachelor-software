@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core'
 import { UtilService } from '@services/util.service';
 import { ConversionTypeCalculator, universalVariables } from '../models/calculator.dto';
-
+import { create, all } from 'mathjs'
 @Injectable()
 export class CalculatorService {
+
+  private math = create(all)
 
   constructor(
     private readonly utilService: UtilService,
@@ -69,14 +71,14 @@ export class CalculatorService {
         const variableValue = arrayCalculated[i][j]
         mappedSentence = this.utilService.replaceAll(mappedSentence, variableName, variableValue)
       }
-      const evaluationResult = eval(mappedSentence) > 0 ? '1' : '0'
+      const evaluationResult = this.math.evaluate(mappedSentence) > 0 ? '1' : '0'
       arrayCalculated[i][arrayCalculated[i].length-1] = evaluationResult
     }
     return arrayCalculated
   }
 
   private getNumberResults(numberVariables: number): number {
-    return Math.pow(2, numberVariables)
+    return <number>this.math.pow(2, numberVariables)
   }
 
 }

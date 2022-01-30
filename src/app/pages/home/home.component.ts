@@ -7,4 +7,8 @@ import { Component } from '@angular/core'
 })
 export class HomeComponent {
   public isBooleSelected = true
+
+  public onChangeSelect(isSelected: boolean): void {
+    this.isBooleSelected = isSelected
+  }
 }
