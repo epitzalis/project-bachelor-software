@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Router } from '@angular/router'
+import { NavigationExtras, Router } from '@angular/router'
 import { Calculator } from '@models/calculator.dto'
 
 @Injectable({
@@ -16,5 +16,9 @@ export class NavigationService {
 
   public toHome(): void {
     this.router.navigate([''])
+  }
+
+  public getNavigationExtras(): NavigationExtras {
+    return this.router.getCurrentNavigation().extras
   }
 }
