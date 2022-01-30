@@ -13,11 +13,7 @@
   </div>
 
   <app-calculator
-    [hidden]="!isBooleSelected"
-    typeCalculator="boole"
-  ></app-calculator>
-  <app-calculator
     [hidden]="isBooleSelected"
-    typeCalculator="proposition"
+    [typeCalculator]="isBooleSelected ? 'proposition' : 'boole'"
   ></app-calculator>
 </div>

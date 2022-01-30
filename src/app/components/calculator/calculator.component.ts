@@ -46,7 +46,7 @@ export class CalculatorComponent {
     if (this.valueCalculator) {
       const universalValue = this.calculatorService.convertToUniversal(this.valueCalculator)
       const usedVariables = this.calculatorService.getUsedVariables(universalValue)
-      if (usedVariables.length > 0) {
+      if (usedVariables.length) {
         // Create first level with titles
         const headData = this.calculatorService.getHeadArrayData(universalValue, usedVariables)
         let arrayData: string[][] = [headData]
@@ -56,6 +56,7 @@ export class CalculatorComponent {
         arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
         // Calculare array data
         arrayData = this.calculatorService.calculateArrayData(arrayData)
+        alert(arrayData)
         // TODO
       }
     }
