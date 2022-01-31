@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Calculator } from '@models/calculator.dto'
 import { NavigationService } from '@services/navigation.service'
@@ -8,10 +8,16 @@ import { NavigationService } from '@services/navigation.service'
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss'],
 })
-export class ResultComponent {
-  public arrayData: string[][]
+export class ResultComponent implements OnInit {
+  public columns: string[]
+
+  public rows: string[][]
 
   public typeCalculator: Calculator
+
+  private arrayData: string[][]
+
+  private readonly HEAD_POSITION = 0
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
@@ -24,7 +30,19 @@ export class ResultComponent {
     }
   }
 
+  public ngOnInit() {
+    this.loadTable()
+  }
+
   private getArrayData(): string[][] {
     return this.navigationService.getNavigationExtras().state?.arrayData
+  }
+
+  private loadTable(): void {
+    if (this.arrayData?.length) {
+      this.columns = [...this.arrayData[this.HEAD_POSITION]]
+      this.arrayData.splice(this.HEAD_POSITION, 1)
+      this.rows = this.arrayData.map((row: string[]) => [...row])
+    }
   }
 }

@@ -1,5 +1,16 @@
-<ng-container *ngIf="typeCalculator && arrayData">
+<ng-container *ngIf="typeCalculator && columns && rows">
   <h1>Result {{ typeCalculator }}</h1>
 
-  <pre>{{ arrayData | json }}</pre>
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let column of columns">{{ column }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let value of row">{{ value }}</td>
+      </tr>
+    </tbody>
+  </table>
 </ng-container>
