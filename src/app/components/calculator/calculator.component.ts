@@ -11,9 +11,14 @@ import { CalculatorService } from './services/calculator.service'
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  @Input() public typeCalculator: Calculator = 'boole'
+  @Input() public set iTypeCalculator(type: Calculator) {
+    this.onClear()
+    this.typeCalculator = type
+  }
 
   @ViewChild('inputCalculator', { static: false }) inputCalculator: ElementRef<HTMLInputElement>
+
+  public typeCalculator: Calculator = 'boole'
 
   constructor(
     private readonly calculatorService: CalculatorService,
