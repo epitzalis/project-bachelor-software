@@ -71,6 +71,8 @@ export class CalculatorService {
         const variableValue = arrayCalculated[i][j]
         mappedSentence = this.utilService.replaceAll(mappedSentence, variableName, variableValue)
       }
+      mappedSentence = this.utilService.replaceAll(mappedSentence, '~', '-')
+      mappedSentence = this.utilService.replaceAll(mappedSentence, '¬', '-')
       const evaluationResult = this.math.evaluate(mappedSentence) > 0 ? '1' : '0'
       arrayCalculated[i][arrayCalculated[i].length-1] = evaluationResult
     }
