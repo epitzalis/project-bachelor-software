@@ -31,12 +31,17 @@ export class CalculatorComponent {
   }
 
   set valueCalculator(newValue: string) {
-    this.renderer.setProperty(this.inputCalculator.nativeElement, 'value', newValue)
+    if (this.inputCalculator?.nativeElement) {
+      this.renderer.setProperty(this.inputCalculator.nativeElement, 'value', newValue)
+    }
   }
 
   public onAddCharacter(character: string): void {
     const oldValue = this.valueCalculator
-    this.valueCalculator = oldValue + character
+    const lastCharacter = oldValue.charAt(oldValue.length - 1)
+    if (lastCharacter !== character) {
+      this.valueCalculator = oldValue + character
+    }
   }
 
   public onBack(): void {

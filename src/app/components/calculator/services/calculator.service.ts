@@ -51,7 +51,7 @@ export class CalculatorService {
           counterConsecutiveTrues = 0
           actualValue = !actualValue
         }
-        arrayDataFilled[j][numberUnfilledVariables - 1] = actualValue ? '1' : '0'
+        arrayDataFilled[j][numberUnfilledVariables - 1] = actualValue ? '0' : '1'
         counterConsecutiveTrues += 1
       }
       numberUnfilledVariables -= 1

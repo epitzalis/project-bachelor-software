@@ -64,15 +64,15 @@
     <div class="flex-half flex-container-row flex-column-gap">
       <button
         class="flex-half button"
-        (click)="onAddCharacter(typeCalculator === 'boole' ? '+' : 'v')"
-      >
-        {{ typeCalculator === "boole" ? "+" : "v" }}
-      </button>
-      <button
-        class="flex-half button"
         (click)="onAddCharacter(typeCalculator === 'boole' ? 'x' : '^')"
       >
         {{ typeCalculator === "boole" ? "x" : "^" }}
+      </button>
+      <button
+        class="flex-half button"
+        (click)="onAddCharacter(typeCalculator === 'boole' ? '+' : 'v')"
+      >
+        {{ typeCalculator === "boole" ? "+" : "v" }}
       </button>
     </div>
   </div>
