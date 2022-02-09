@@ -71,8 +71,11 @@ export class CalculatorService {
         const variableValue = arrayCalculated[i][j]
         mappedSentence = this.utilService.replaceAll(mappedSentence, variableName, variableValue)
       }
-      mappedSentence = this.utilService.replaceAll(mappedSentence, '~', '-')
-      mappedSentence = this.utilService.replaceAll(mappedSentence, '¬', '-')
+      // Se debe de invertir el valor de cada símbolo que contenga un negativo antes
+      mappedSentence = this.applyNegativeSymbol(mappedSentence)
+      // Se deben de eliminar todos los símbolos pertenecientes al negativo
+      mappedSentence = this.utilService.replaceAll(mappedSentence, '~', '')
+      mappedSentence = this.utilService.replaceAll(mappedSentence, '¬', '')
       const evaluationResult = this.math.evaluate(mappedSentence) > 0 ? '1' : '0'
       arrayCalculated[i][arrayCalculated[i].length-1] = evaluationResult
     }
@@ -81,6 +84,19 @@ export class CalculatorService {
 
   private getNumberResults(numberVariables: number): number {
     return <number>this.math.pow(2, numberVariables)
+  }
+
+  private applyNegativeSymbol(sentence: string) {
+    for (let i = 0; i < (sentence.length - 1); i++) {
+      const nextIndex = i + 1
+      const character = sentence[i]
+      const nextCharacter = sentence[nextIndex]
+      if (character === '~' || character === '¬') {
+        const newCharacter = nextCharacter === '0' ? '1' : '0'
+        sentence = this.utilService.setCharAt(sentence, nextIndex, newCharacter);
+      }
+    }
+    return sentence
   }
 
 }
