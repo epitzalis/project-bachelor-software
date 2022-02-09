@@ -71,15 +71,19 @@ export class CalculatorService {
         const variableValue = arrayCalculated[i][j]
         mappedSentence = this.utilService.replaceAll(mappedSentence, variableName, variableValue)
       }
+      mappedSentence = this.applyNegativeSymbol(mappedSentence)
+      // Se resuelven las sentencias que haya entre paréntesis
+      mappedSentence = this.resolveSentences(mappedSentence)
       // Se debe de invertir el valor de cada símbolo que contenga un negativo antes
       mappedSentence = this.applyNegativeSymbol(mappedSentence)
-      // Se deben de eliminar todos los símbolos pertenecientes al negativo
-      mappedSentence = this.utilService.replaceAll(mappedSentence, '~', '')
-      mappedSentence = this.utilService.replaceAll(mappedSentence, '¬', '')
-      const evaluationResult = this.math.evaluate(mappedSentence) > 0 ? '1' : '0'
+      const evaluationResult = this.evaluateSentence(mappedSentence)
       arrayCalculated[i][arrayCalculated[i].length-1] = evaluationResult
     }
     return arrayCalculated
+  }
+
+  private evaluateSentence(sentence: string): string {
+    return this.math.evaluate(sentence) > 0 ? '1' : '0'
   }
 
   private getNumberResults(numberVariables: number): number {
@@ -87,13 +91,50 @@ export class CalculatorService {
   }
 
   private applyNegativeSymbol(sentence: string) {
+    // Se buscan los símbolos negativos para invertir el valor del siguiente caracter
+    // Los carácteres solo se invierten cuando delante no hay un paréntesis
     for (let i = 0; i < (sentence.length - 1); i++) {
       const nextIndex = i + 1
       const character = sentence[i]
       const nextCharacter = sentence[nextIndex]
-      if (character === '~' || character === '¬') {
+      if ((character === '~' || character === '¬') && (nextCharacter !== '(' && nextCharacter !== ')')) {
         const newCharacter = nextCharacter === '0' ? '1' : '0'
-        sentence = this.utilService.setCharAt(sentence, nextIndex, newCharacter);
+        sentence = this.utilService.setCharAt(sentence, i, '');
+        sentence = this.utilService.setCharAt(sentence, i, newCharacter);
+        i = i - 1
+      }
+    }
+    return sentence
+  }
+
+  private resolveSentences(sentence: string): string {
+    // Se itera varias veces por la sentencia hasta conseguir obtener los resultados dentro de todos los paréntesis
+    let isResolved = false
+    while(!isResolved) {
+      let indexStart = null
+      let indexEnd = null
+      for (let i = 0; i < sentence.length && indexEnd === null; i++) {
+        // Se va buscando cuál es la sentencia de menor nivel encontrada, 
+        // para ir resolviéndola hasta llegar a resolver todos los paréntesis
+        const character = sentence[i]
+        if (character === '(') {
+          if (indexStart !== null) {
+            indexEnd = null
+          }
+          indexStart = i
+        } else if (character === ')') {
+          indexEnd = i
+        }
+      }
+      // Una vez que se encuentra una sentencia de nivel menor, se obtiene su valor
+      if (indexStart === null && indexEnd === null) {
+        // Si no se encuentran índices, es porque no hay más paréntesis en la sentencia
+        isResolved = true
+      } else {
+        const parenthesesSentence = sentence.substring(indexStart, (indexEnd + 1))
+        const evaluation = this.evaluateSentence(parenthesesSentence)
+        // Se reemplaza el valor del paréntesis por el resultado de la evaluación
+        sentence = this.utilService.replaceAll(sentence, parenthesesSentence, evaluation)
       }
     }
     return sentence
