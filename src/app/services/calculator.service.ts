@@ -30,7 +30,11 @@ export class CalculatorService {
   }
 
   public getUsedVariables(universalValue: string): string[] {
-    return universalVariables.filter((variable: string) => universalValue.includes(variable))
+    const usedVariables = universalVariables.filter((variable: string) => universalValue.includes(variable))
+    if (usedVariables.length === 0) {
+      throw new Error('incorrect sentence')
+    }
+    return usedVariables
   }
 
   public getHeadArrayData(universalValue: string, usedVariables: string[]): string[] {
