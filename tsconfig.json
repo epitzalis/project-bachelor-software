@@ -29,6 +29,9 @@
       "@services/*": [
         "src/app/services/*"
       ],
+      "@error-handlers/*": [
+        "src/app/error-handlers/*"
+      ],
     }
   },
   "angularCompilerOptions": {
