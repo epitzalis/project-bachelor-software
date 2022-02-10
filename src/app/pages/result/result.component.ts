@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Calculator } from '@models/calculator.dto'
 import { NavigationService } from '@services/navigation.service'
@@ -7,6 +7,7 @@ import { NavigationService } from '@services/navigation.service'
   selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ResultComponent implements OnInit {
   public columns: string[]

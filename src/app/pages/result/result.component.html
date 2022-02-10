@@ -1,16 +1,4 @@
 <ng-container *ngIf="typeCalculator && columns && rows">
   <h1>Result {{ typeCalculator }}</h1>
-
-  <table class="table container">
-    <thead>
-      <tr>
-        <th *ngFor="let column of columns">{{ column }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let row of rows">
-        <td *ngFor="let value of row">{{ value }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <app-table [columns]="columns" [rows]="rows"></app-table>
 </ng-container>
