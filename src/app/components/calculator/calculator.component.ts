@@ -1,19 +1,20 @@
 import {
-  Component, ElementRef, Input, Renderer2, ViewChild,
+  Component, ElementRef, Input, Renderer2, ViewChild, OnInit, OnDestroy,
 } from '@angular/core'
 import { NavigationService } from '@services/navigation.service'
 import {
   Calculator, closeParenthesesSymbols, negativeSymbols,
   openParenthesesSymbols, operatorSymbols, variableSymbols,
 } from '@models/calculator.dto'
-import { CalculatorService } from './services/calculator.service'
+import { CalculatorService } from '@services/calculator.service'
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss'],
 })
-export class CalculatorComponent {
+export class CalculatorComponent implements OnInit, OnDestroy {
   @Input() public set iTypeCalculator(type: Calculator) {
     this.onClear()
     this.typeCalculator = type
@@ -23,11 +24,30 @@ export class CalculatorComponent {
 
   public typeCalculator: Calculator = 'boole'
 
+  public errorMessage = ''
+
+  public isException = false
+
+  private exceptionSubscription: Subscription
+
   constructor(
     private readonly calculatorService: CalculatorService,
     private readonly navigationService: NavigationService,
     private readonly renderer: Renderer2,
   ) {}
+
+  ngOnInit(): void {
+    this.exceptionSubscription = this.calculatorService.$exception.subscribe(() => {
+      this.errorMessage = ''
+      this.isException = true
+    })
+  }
+
+  ngOnDestroy(): void {
+    if (this.exceptionSubscription) {
+      this.exceptionSubscription.unsubscribe()
+    }
+  }
 
   get valueCalculator(): string {
     return this.inputCalculator.nativeElement.value
@@ -53,10 +73,12 @@ export class CalculatorComponent {
 
   public onBack(): void {
     this.valueCalculator = this.valueCalculator.slice(0, -1)
+    this.clearErrorMessages()
   }
 
   public onClear(): void {
     this.valueCalculator = ''
+    this.clearErrorMessages()
   }
 
   public onCalculate(): void {
@@ -79,28 +101,40 @@ export class CalculatorComponent {
   }
 
   private validateCharacter(character: string, lastCharacter: string): boolean {
+    let isValid = true
+    let errorMessage: string
+    this.clearErrorMessages()
     if (negativeSymbols.includes(lastCharacter)) {
       // Después de un símbolo negativo solo se puede poner una variable
-      return variableSymbols.includes(character) || openParenthesesSymbols === character
-    }
-    if (operatorSymbols.includes(lastCharacter)) {
-      // Después de un operador solo puede ir una variable o un paréntesis
-      return variableSymbols.includes(character)
-              || character === '(' || negativeSymbols.includes(character)
-    }
-    if (variableSymbols.includes(lastCharacter)) {
-      // Después de una variable solo puede ir un operador
-      return operatorSymbols.includes(character) || closeParenthesesSymbols === character
-    }
-    if (openParenthesesSymbols === lastCharacter) {
-      // Después de un inicio de paréntesis solo puede ir un símbolo negativo una variable o inicio paréntesis
-      return negativeSymbols.includes(character) || variableSymbols.includes(character)
+      errorMessage = 'Después de un símbolo negativo solo se puede poner una variable'
+      isValid = variableSymbols.includes(character) || openParenthesesSymbols === character
+    } else if (operatorSymbols.includes(lastCharacter)) {
+      // Después de un operador solo puede ir una variable o una apertura de paréntesis
+      errorMessage = 'Después de un operador solo puede ir una variable o una apertura de paréntesis'
+      isValid = variableSymbols.includes(character)
+              || character === openParenthesesSymbols || negativeSymbols.includes(character)
+    } else if (variableSymbols.includes(lastCharacter)) {
+      // Después de una variable solo puede ir un operador o cierre de paréntesis
+      errorMessage = 'Después de una variable solo puede ir un operador o cierre de paréntesis'
+      isValid = operatorSymbols.includes(character) || closeParenthesesSymbols === character
+    } else if (openParenthesesSymbols === lastCharacter) {
+      errorMessage = 'Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable'
+      // Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable
+      isValid = negativeSymbols.includes(character) || variableSymbols.includes(character)
                 || openParenthesesSymbols === character
-    }
-    if (closeParenthesesSymbols === lastCharacter) {
+    } else if (closeParenthesesSymbols === lastCharacter) {
+      errorMessage = 'Después de un cierre de paréntesis solo puede ir un operador o cierre de paréntesis'
       // Después de un cierre de paréntesis solo puede ir un operador o cierre de paréntesis
-      return operatorSymbols.includes(character) || closeParenthesesSymbols === character
+      isValid = operatorSymbols.includes(character) || closeParenthesesSymbols === character
     }
-    return true
+    if (!isValid) {
+      this.errorMessage = errorMessage
+    }
+    return isValid
+  }
+
+  private clearErrorMessages(): void {
+    this.errorMessage = ''
+    this.isException = false
   }
 }

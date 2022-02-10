@@ -22,7 +22,11 @@
         DEL
       </button>
     </div>
-    <button class="flex-half button is-success" (click)="onCalculate()">
+    <button
+      class="flex-half button is-success"
+      (click)="onCalculate()"
+      [disabled]="inputCalculator.value.length === 0"
+    >
       =
     </button>
   </div>
@@ -83,7 +87,10 @@
   </div>
 </div>
 
-<div class="notification is-warning is-size-5">
-  <!-- <button class="delete"></button> -->
+<div class="notification is-warning is-size-5" *ngIf="errorMessage.length">
+  {{ errorMessage }}
+</div>
+
+<div class="notification is-danger is-size-5" *ngIf="isException">
   Ha introducido una sentencia incorrecta
 </div>

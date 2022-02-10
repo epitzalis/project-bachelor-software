@@ -2,14 +2,24 @@ import { Injectable } from '@angular/core'
 import { UtilService } from '@services/util.service';
 import { ConversionTypeCalculator, universalVariables } from '@models/calculator.dto';
 import { create, all } from 'mathjs'
-@Injectable()
+import { Subject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root',
+})
 export class CalculatorService {
 
   private math = create(all)
+  private exceptionSource = new Subject<void>();
+  public $exception = this.exceptionSource.asObservable();
 
   constructor(
     private readonly utilService: UtilService,
   ){}
+
+  public throwExceptionSubject(): void {
+    this.exceptionSource.next()
+  }
 
   public convertToUniversal(originalValue: string): string {
     for (const propositionCharacter in ConversionTypeCalculator) {
