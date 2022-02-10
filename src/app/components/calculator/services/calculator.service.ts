@@ -118,9 +118,6 @@ export class CalculatorService {
         // para ir resolviéndola hasta llegar a resolver todos los paréntesis
         const character = sentence[i]
         if (character === '(') {
-          if (indexStart !== null) {
-            indexEnd = null
-          }
           indexStart = i
         } else if (character === ')') {
           indexEnd = i

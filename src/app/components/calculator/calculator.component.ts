@@ -2,7 +2,10 @@ import {
   Component, ElementRef, Input, Renderer2, ViewChild,
 } from '@angular/core'
 import { NavigationService } from '@services/navigation.service'
-import { Calculator } from '@models/calculator.dto'
+import {
+  Calculator, closeParenthesesSymbols, negativeSymbols,
+  openParenthesesSymbols, operatorSymbols, variableSymbols,
+} from '@models/calculator.dto'
 import { CalculatorService } from './services/calculator.service'
 
 @Component({
@@ -37,10 +40,14 @@ export class CalculatorComponent {
   }
 
   public onAddCharacter(character: string): void {
-    const oldValue = this.valueCalculator
-    const lastCharacter = oldValue.charAt(oldValue.length - 1)
-    if (lastCharacter !== character) {
-      this.valueCalculator = oldValue + character
+    if (this.valueCalculator) {
+      const oldValue = this.valueCalculator
+      const lastCharacter = oldValue.charAt(oldValue.length - 1)
+      if (this.validateCharacter(character, lastCharacter)) {
+        this.valueCalculator = oldValue + character
+      }
+    } else {
+      this.valueCalculator = character
     }
   }
 
@@ -69,5 +76,31 @@ export class CalculatorComponent {
         this.navigationService.toResult(this.typeCalculator, arrayData)
       }
     }
+  }
+
+  private validateCharacter(character: string, lastCharacter: string): boolean {
+    if (negativeSymbols.includes(lastCharacter)) {
+      // Después de un símbolo negativo solo se puede poner una variable
+      return variableSymbols.includes(character) || openParenthesesSymbols === character
+    }
+    if (operatorSymbols.includes(lastCharacter)) {
+      // Después de un operador solo puede ir una variable o un paréntesis
+      return variableSymbols.includes(character)
+              || character === '(' || negativeSymbols.includes(character)
+    }
+    if (variableSymbols.includes(lastCharacter)) {
+      // Después de una variable solo puede ir un operador
+      return operatorSymbols.includes(character) || closeParenthesesSymbols === character
+    }
+    if (openParenthesesSymbols === lastCharacter) {
+      // Después de un inicio de paréntesis solo puede ir un símbolo negativo una variable o inicio paréntesis
+      return negativeSymbols.includes(character) || variableSymbols.includes(character)
+                || openParenthesesSymbols === character
+    }
+    if (closeParenthesesSymbols === lastCharacter) {
+      // Después de un cierre de paréntesis solo puede ir un operador o cierre de paréntesis
+      return operatorSymbols.includes(character) || closeParenthesesSymbols === character
+    }
+    return true
   }
 }
