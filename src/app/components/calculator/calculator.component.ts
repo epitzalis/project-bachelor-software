@@ -1,5 +1,5 @@
 import {
-  Component, ElementRef, Input, Renderer2, ViewChild, OnInit, OnDestroy,
+  Component, ElementRef, Input, Renderer2, ViewChild, OnInit, OnDestroy, ViewEncapsulation,
 } from '@angular/core'
 import { NavigationService } from '@services/navigation.service'
 import {
@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs'
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CalculatorComponent implements OnInit, OnDestroy {
   @Input() public set iTypeCalculator(type: Calculator) {
