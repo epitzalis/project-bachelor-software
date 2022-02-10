@@ -127,6 +127,9 @@ export class CalculatorService {
       if (indexStart === null && indexEnd === null) {
         // Si no se encuentran índices, es porque no hay más paréntesis en la sentencia
         isResolved = true
+      } else if ((indexStart === null && indexEnd !== null) || indexStart !== null && indexEnd === null) {
+        // Si entra en esta condición es porque los paréntesis no se pusieron correctamente
+        throw new Error('incorrect sentence')
       } else {
         const parenthesesSentence = sentence.substring(indexStart, (indexEnd + 1))
         const evaluation = this.evaluateSentence(parenthesesSentence)
