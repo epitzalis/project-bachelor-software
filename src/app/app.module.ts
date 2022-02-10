@@ -7,6 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader'
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { CalculatorErrorHandlerModule } from
   '@error-handlers/calculator-error-handler/calculator-error-handler.module'
+import { HeaderModule } from '@components/header/header.module'
+import { FooterModule } from '@components/footer/footer.module'
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app-routing.module'
 
@@ -24,6 +26,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     AppRoutingModule,
     CalculatorErrorHandlerModule,
     HttpClientModule,
+    HeaderModule,
+    FooterModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
