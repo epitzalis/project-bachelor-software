@@ -4,10 +4,10 @@
   <div class="tabs is-large">
     <ul>
       <li [class.is-active]="isBooleSelected" (click)="onChangeSelect(true)">
-        <a>Boole</a>
+        <a>{{ "COMMONS.BOOLE" | translate }}</a>
       </li>
       <li [class.is-active]="!isBooleSelected" (click)="onChangeSelect(false)">
-        <a>Proposition</a>
+        <a>{{ "COMMONS.PROPOSITION" | translate }}</a>
       </li>
     </ul>
   </div>

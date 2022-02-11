@@ -11,6 +11,16 @@ export enum ConversionTypeCalculator {
     'x' = '*',
 }
 
+export enum ConversionPropositionTypeCalculator {
+    'a' = 'p',
+    'b' = 'q',
+    'c' = 'r',
+    'd' = 's',
+    '¬' = '~',
+    '+' = 'v',
+    '*' = '^',
+}
+
 export const universalVariables = ['a', 'b', 'c', 'd']
 
 export const negativeSymbols = '~¬'

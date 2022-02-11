@@ -8,6 +8,7 @@ import {
 } from '@models/calculator.dto'
 import { CalculatorService } from '@services/calculator.service'
 import { Subscription } from 'rxjs'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-calculator',
@@ -34,6 +35,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
   constructor(
     private readonly calculatorService: CalculatorService,
     private readonly navigationService: NavigationService,
+    private readonly translateService: TranslateService,
     private readonly renderer: Renderer2,
   ) {}
 
@@ -87,15 +89,19 @@ export class CalculatorComponent implements OnInit, OnDestroy {
       const universalValue = this.calculatorService.convertToUniversal(this.valueCalculator)
       const usedVariables = this.calculatorService.getUsedVariables(universalValue)
       if (usedVariables.length) {
-        // Create first level with titles
+        // Se crea el primer nivel con los títulos
         const headData = this.calculatorService.getHeadArrayData(universalValue, usedVariables)
         let arrayData: string[][] = [headData]
-        // Create all empty array entries
+        // Crear entradas vacías de los arrays
         arrayData = this.calculatorService.createResultEntries(arrayData, usedVariables)
-        // Fill the array with true or false values of each variable
+        // Se Rellena la matriz con valores verdaderos o falsos de cada variable
         arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
-        // Calculare array data
+        // Calcula los resultados de la tabla
         arrayData = this.calculatorService.calculateArrayData(arrayData)
+        if (this.typeCalculator === 'proposition') {
+          // En caso de ser una proposición, hay que volver a pasar a proposición la tabla
+          arrayData = this.calculatorService.convertToProposition(arrayData)
+        }
         this.navigationService.toResult(this.typeCalculator, arrayData)
       }
     }
@@ -107,25 +113,25 @@ export class CalculatorComponent implements OnInit, OnDestroy {
     this.clearErrorMessages()
     if (negativeSymbols.includes(lastCharacter)) {
       // Después de un símbolo negativo solo se puede poner una variable
-      errorMessage = 'Después de un símbolo negativo solo se puede poner una variable'
+      errorMessage = this.translateService.instant('ERROR.AFTER_NEGATIVE')
       isValid = variableSymbols.includes(character) || openParenthesesSymbols === character
     } else if (operatorSymbols.includes(lastCharacter)) {
       // Después de un operador solo puede ir una variable o una apertura de paréntesis
-      errorMessage = 'Después de un operador solo puede ir una variable o una apertura de paréntesis'
+      errorMessage = this.translateService.instant('ERROR.AFTER_OPERATOR')
       isValid = variableSymbols.includes(character)
               || character === openParenthesesSymbols || negativeSymbols.includes(character)
     } else if (variableSymbols.includes(lastCharacter)) {
       // Después de una variable solo puede ir un operador o cierre de paréntesis
-      errorMessage = 'Después de una variable solo puede ir un operador o cierre de paréntesis'
+      errorMessage = this.translateService.instant('ERROR.AFTER_VARIABLE')
       isValid = operatorSymbols.includes(character) || closeParenthesesSymbols === character
     } else if (openParenthesesSymbols === lastCharacter) {
-      errorMessage = 'Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable'
       // Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable
+      errorMessage = this.translateService.instant('ERROR.AFTER_OPEN_PARENTHESES')
       isValid = negativeSymbols.includes(character) || variableSymbols.includes(character)
                 || openParenthesesSymbols === character
     } else if (closeParenthesesSymbols === lastCharacter) {
-      errorMessage = 'Después de un cierre de paréntesis solo puede ir un operador o cierre de paréntesis'
       // Después de un cierre de paréntesis solo puede ir un operador o cierre de paréntesis
+      errorMessage = this.translateService.instant('ERROR.AFTER_CLOSE_PARENTHESES')
       isValid = operatorSymbols.includes(character) || closeParenthesesSymbols === character
     }
     if (!isValid) {

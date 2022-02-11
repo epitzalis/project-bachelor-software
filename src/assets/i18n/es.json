@@ -1,5 +1,15 @@
 {
     "COMMONS": {
-        "TITLE": "TFG Técnicas de aplicaciones de software"
+        "TITLE": "TFG Técnicas de aplicaciones de software",
+        "BOOLE": "Boole",
+        "PROPOSITION": "Proposición"
+    },
+    "ERROR": {
+        "AFTER_NEGATIVE": "Después de un símbolo negativo solo se puede poner una variable",
+        "AFTER_OPERATOR": "Después de un operador solo puede ir una variable o una apertura de paréntesis",
+        "AFTER_VARIABLE": "Después de una variable solo puede ir un operador o cierre de paréntesis",
+        "AFTER_OPEN_PARENTHESES": "Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable",
+        "AFTER_CLOSE_PARENTHESES": "Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable",
+        "GENERAL": "Ha introducido una sentencia incorrecta"
     }
 }

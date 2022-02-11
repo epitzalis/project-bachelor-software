@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { TranslateModule } from '@ngx-translate/core'
 import { CalculatorComponent } from './calculator.component'
 
 @NgModule({
@@ -8,6 +9,7 @@ import { CalculatorComponent } from './calculator.component'
   ],
   imports: [
     CommonModule,
+    TranslateModule,
   ],
   exports: [
     CalculatorComponent,
