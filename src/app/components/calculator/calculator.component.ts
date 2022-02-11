@@ -9,6 +9,7 @@ import {
 import { CalculatorService } from '@services/calculator.service'
 import { Subscription } from 'rxjs'
 import { TranslateService } from '@ngx-translate/core'
+import { ConversionService } from '@services/conversion.service'
 
 @Component({
   selector: 'app-calculator',
@@ -34,6 +35,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly calculatorService: CalculatorService,
+    private readonly conversionService: ConversionService,
     private readonly navigationService: NavigationService,
     private readonly translateService: TranslateService,
     private readonly renderer: Renderer2,
@@ -86,7 +88,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
 
   public onCalculate(): void {
     if (this.valueCalculator) {
-      const universalValue = this.calculatorService.convertToUniversal(this.valueCalculator)
+      const universalValue = this.conversionService.convertToUniversal(this.valueCalculator)
       const usedVariables = this.calculatorService.getUsedVariables(universalValue)
       if (usedVariables.length) {
         // Se crea el primer nivel con los títulos
@@ -100,7 +102,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
         arrayData = this.calculatorService.calculateArrayData(arrayData)
         if (this.typeCalculator === 'proposition') {
           // En caso de ser una proposición, hay que volver a pasar a proposición la tabla
-          arrayData = this.calculatorService.convertToProposition(arrayData)
+          arrayData = this.conversionService.convertToProposition(arrayData)
         }
         this.navigationService.toResult(this.typeCalculator, arrayData)
       }

@@ -1,40 +1,27 @@
 import { Injectable } from '@angular/core'
-import { UtilService } from '@services/util.service';
-import { ConversionPropositionTypeCalculator, ConversionTypeCalculator, universalVariables } from '@models/calculator.dto';
+import { UtilService } from '@services/util.service'
+import { universalVariables } from '@models/calculator.dto'
 import { create, all } from 'mathjs'
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
 })
 export class CalculatorService {
+  public $exception: Observable<void>
 
   private math = create(all)
-  private exceptionSource = new Subject<void>();
-  public $exception = this.exceptionSource.asObservable();
+
+  private exceptionSource = new Subject<void>()
 
   constructor(
     private readonly utilService: UtilService,
-  ){}
+  ) {
+    this.$exception = this.exceptionSource.asObservable()
+  }
 
   public throwExceptionSubject(): void {
     this.exceptionSource.next()
-  }
-
-  public convertToUniversal(originalValue: string): string {
-    for (const propositionCharacter in ConversionTypeCalculator) {
-        originalValue = this.utilService.replaceAll(originalValue, propositionCharacter, 
-                                                        ConversionTypeCalculator[propositionCharacter])
-    }
-    return originalValue
-  }
-
-  public convertToProposition(arrayDataUniversal: string[][]): string[][] {
-    const headerColumns = this.convertHeaderToProposition(arrayDataUniversal[0])
-    // Se elimina la primera fila correspondiente a la cabecera, para quedarse con las filas
-    arrayDataUniversal.splice(0, 1)
-    const rows = this.convertRowsToProposition(arrayDataUniversal) 
-    return [headerColumns, ...rows]
   }
 
   public getUsedVariables(universalValue: string): string[] {
@@ -51,9 +38,9 @@ export class CalculatorService {
 
   public createResultEntries(arrayData: string[][], usedVariables: string[]): string[][] {
     const numberResults = this.getNumberResults(usedVariables.length)
-    for (let i = 0; i < numberResults; i += 1) {
+    for (let i = 0; i < numberResults; i++) {
       const row = []
-      for (let j = 0; j < usedVariables.length + 1; j += 1) {
+      for (let j = 0; j < usedVariables.length + 1; j++) {
         row.push([])
       }
       arrayData.push(row)
@@ -68,7 +55,7 @@ export class CalculatorService {
     for (let i = numberUnfilledVariables; i !== 0; i -= 1) {
       let counterConsecutiveTrues = 0
       let actualValue = true
-      for (let j = 1; j < arrayDataFilled.length; j += 1) {
+      for (let j = 1; j < arrayDataFilled.length; j++) {
         if (numberConsecutiveTrues === counterConsecutiveTrues) {
           counterConsecutiveTrues = 0
           actualValue = !actualValue
@@ -86,9 +73,9 @@ export class CalculatorService {
     const arrayCalculated = arrayData
     const headData = arrayData[0]
     const sentence = headData[headData.length - 1]
-    for (let i = 1; i < arrayCalculated.length; i += 1) {
+    for (let i = 1; i < arrayCalculated.length; i++) {
       let mappedSentence = sentence
-      for (let j = 0; j < arrayCalculated[i].length - 1; j += 1) {
+      for (let j = 0; j < arrayCalculated[i].length - 1; j++) {
         const variableName = headData[j]
         const variableValue = arrayCalculated[i][j]
         mappedSentence = this.utilService.replaceAll(mappedSentence, variableName, variableValue)
@@ -99,7 +86,7 @@ export class CalculatorService {
       // Se debe de invertir el valor de cada símbolo que contenga un negativo antes
       mappedSentence = this.applyNegativeSymbol(mappedSentence)
       const evaluationResult = this.evaluateSentence(mappedSentence)
-      arrayCalculated[i][arrayCalculated[i].length-1] = evaluationResult
+      arrayCalculated[i][arrayCalculated[i].length - 1] = evaluationResult
     }
     return arrayCalculated
   }
@@ -109,7 +96,7 @@ export class CalculatorService {
   }
 
   private getNumberResults(numberVariables: number): number {
-    return <number>this.math.pow(2, numberVariables)
+    return <number> this.math.pow(2, numberVariables)
   }
 
   private applyNegativeSymbol(sentence: string) {
@@ -121,9 +108,9 @@ export class CalculatorService {
       const nextCharacter = sentence[nextIndex]
       if ((character === '~' || character === '¬') && (nextCharacter !== '(' && nextCharacter !== ')')) {
         const newCharacter = nextCharacter === '0' ? '1' : '0'
-        sentence = this.utilService.setCharAt(sentence, i, '');
-        sentence = this.utilService.setCharAt(sentence, i, newCharacter);
-        i = i - 1
+        sentence = this.utilService.setCharAt(sentence, i, '')
+        sentence = this.utilService.setCharAt(sentence, i, newCharacter)
+        i -= 1
       }
     }
     return sentence
@@ -132,11 +119,11 @@ export class CalculatorService {
   private resolveSentences(sentence: string): string {
     // Se itera varias veces por la sentencia hasta conseguir obtener los resultados dentro de todos los paréntesis
     let isResolved = false
-    while(!isResolved) {
+    while (!isResolved) {
       let indexStart = null
       let indexEnd = null
       for (let i = 0; i < sentence.length && indexEnd === null; i++) {
-        // Se va buscando cuál es la sentencia de menor nivel encontrada, 
+        // Se va buscando cuál es la sentencia de menor nivel encontrada,
         // para ir resolviéndola hasta llegar a resolver todos los paréntesis
         const character = sentence[i]
         if (character === '(') {
@@ -161,32 +148,4 @@ export class CalculatorService {
     }
     return sentence
   }
-
-  private convertHeaderToProposition(headerUniversal: string[]): string[] {
-    for (let i = 0; i < headerUniversal.length; i++) {
-      let column = headerUniversal[i];
-      for (let j = 0; j < column.length; j++) {
-        const character = column[j];
-        if (ConversionPropositionTypeCalculator[character]) {
-          // Si se encuentra el caracter, lo reemplaza por el correspondiente a una proposición
-          column = column.replace(character, ConversionPropositionTypeCalculator[character])
-        }
-      }
-      headerUniversal[i] = column
-    }
-    return headerUniversal
-  }
-
-  private convertRowsToProposition(rows: string[][]): string[][] {
-    // Se convierten los 0 a Falso y los 1 a Verdadero
-    for (let i = 0; i < rows.length; i++) {
-      const row = rows[i];
-      for (let j = 0; j < row.length; j++) {
-        const character = row[j];
-        rows[i][j] = character === '0' ? 'F' : 'V'
-      }
-    }
-    return rows
-  }
-
 }
