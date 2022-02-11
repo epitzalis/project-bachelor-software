@@ -1,4 +1,15 @@
 <ng-container *ngIf="typeCalculator && columns && rows">
   <h1>Result {{ typeCalculator }}</h1>
+
   <app-table [columns]="columns" [rows]="rows"></app-table>
+
+  <div>
+    <app-boole-info
+      *ngIf="typeCalculator === 'boole'; else propositionInfo"
+    ></app-boole-info>
+  </div>
 </ng-container>
+
+<ng-template #propositionInfo>
+  <app-proposition-info></app-proposition-info>
+</ng-template>
