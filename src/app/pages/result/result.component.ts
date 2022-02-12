@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { Calculator } from '@models/calculator.dto'
+import { booleType, Calculator } from '@models/calculator.dto'
 import { NavigationService } from '@services/navigation.service'
 
 @Component({
@@ -10,6 +10,8 @@ import { NavigationService } from '@services/navigation.service'
   encapsulation: ViewEncapsulation.None,
 })
 export class ResultComponent implements OnInit {
+  public readonly booleType = booleType
+
   public columns: string[]
 
   public rows: string[][]

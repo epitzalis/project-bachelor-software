@@ -34,25 +34,25 @@
   <div class="row">
     <button
       class="flex-quarter button"
-      (click)="onAddCharacter(typeCalculator === 'boole' ? 'a' : 'p')"
+      (click)="onAddCharacter(typeCalculator === booleType ? 'a' : 'p')"
     >
       {{ typeCalculator === "boole" ? "a" : "p" }}
     </button>
     <button
       class="flex-quarter button"
-      (click)="onAddCharacter(typeCalculator === 'boole' ? 'b' : 'q')"
+      (click)="onAddCharacter(typeCalculator === booleType ? 'b' : 'q')"
     >
       {{ typeCalculator === "boole" ? "b" : "q" }}
     </button>
     <button
       class="flex-quarter button"
-      (click)="onAddCharacter(typeCalculator === 'boole' ? 'c' : 'r')"
+      (click)="onAddCharacter(typeCalculator === booleType ? 'c' : 'r')"
     >
       {{ typeCalculator === "boole" ? "c" : "r" }}
     </button>
     <button
       class="flex-quarter button"
-      (click)="onAddCharacter(typeCalculator === 'boole' ? 'd' : 's')"
+      (click)="onAddCharacter(typeCalculator === booleType ? 'd' : 's')"
     >
       {{ typeCalculator === "boole" ? "d" : "s" }}
     </button>
@@ -61,20 +61,20 @@
   <div class="row">
     <button
       class="flex-half button"
-      (click)="onAddCharacter(typeCalculator === 'boole' ? '¬' : '~')"
+      (click)="onAddCharacter(typeCalculator === booleType ? '¬' : '~')"
     >
       {{ typeCalculator === "boole" ? "¬" : "~" }}
     </button>
     <div class="flex-half flex-container-row flex-column-gap">
       <button
         class="flex-half button"
-        (click)="onAddCharacter(typeCalculator === 'boole' ? 'x' : '^')"
+        (click)="onAddCharacter(typeCalculator === booleType ? 'x' : '^')"
       >
         {{ typeCalculator === "boole" ? "x" : "^" }}
       </button>
       <button
         class="flex-half button"
-        (click)="onAddCharacter(typeCalculator === 'boole' ? '+' : 'v')"
+        (click)="onAddCharacter(typeCalculator === booleType ? '+' : 'v')"
       >
         {{ typeCalculator === "boole" ? "+" : "v" }}
       </button>

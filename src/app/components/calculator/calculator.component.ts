@@ -3,8 +3,9 @@ import {
 } from '@angular/core'
 import { NavigationService } from '@services/navigation.service'
 import {
+  booleType,
   Calculator, closeParenthesesSymbols, negativeSymbols,
-  openParenthesesSymbols, operatorSymbols, variableSymbols,
+  openParenthesesSymbols, operatorSymbols, propositionType, variableSymbols,
 } from '@models/calculator.dto'
 import { CalculatorService } from '@services/calculator.service'
 import { Subscription } from 'rxjs'
@@ -25,7 +26,11 @@ export class CalculatorComponent implements OnInit, OnDestroy {
 
   @ViewChild('inputCalculator', { static: false }) inputCalculator: ElementRef<HTMLInputElement>
 
-  public typeCalculator: Calculator = 'boole'
+  public readonly booleType = booleType
+
+  public readonly propositionType = propositionType
+
+  public typeCalculator: Calculator = booleType
 
   public errorMessage = ''
 
@@ -100,7 +105,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
         arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
         // Calcula los resultados de la tabla
         arrayData = this.calculatorService.calculateArrayData(arrayData)
-        if (this.typeCalculator === 'proposition') {
+        if (this.typeCalculator === propositionType) {
           // En caso de ser una proposición, hay que volver a pasar a proposición la tabla
           arrayData = this.conversionService.convertToProposition(arrayData)
         }

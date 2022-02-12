@@ -1,3 +1,7 @@
+export const booleType = 'boole'
+
+export const propositionType = 'proposition'
+
 export type Calculator = 'boole' | 'proposition'
 
 export enum ConversionTypeCalculator {
