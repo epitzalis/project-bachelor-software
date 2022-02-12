@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { TableModule } from '@components/table/table.module'
 import { PropositionInfoModule } from '@components/proposition-info/proposition-info.module'
+import { BooleInfoModule } from '@components/boole-info/boole-info.module'
 import { ResultComponent } from './result.component'
 import { ResultRoutingModule } from './result-routing.module'
-import { BooleInfoModule } from '@components/boole-info/boole-info.module'
 
 @NgModule({
   declarations: [
