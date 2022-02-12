@@ -33,8 +33,12 @@ export class ResultComponent implements OnInit {
     }
   }
 
-  public ngOnInit() {
+  public ngOnInit(): void {
     this.loadTable()
+  }
+
+  public toHome(): void {
+    this.navigationService.toHome()
   }
 
   private getArrayData(): string[][] {

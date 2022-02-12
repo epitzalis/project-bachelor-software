@@ -1,12 +1,16 @@
 <ng-container *ngIf="typeCalculator && columns && rows">
-  <h1>Result {{ typeCalculator }}</h1>
+  <div class="result container">
+    <h1>Result {{ typeCalculator }}</h1>
 
-  <app-table [columns]="columns" [rows]="rows"></app-table>
+    <app-table [columns]="columns" [rows]="rows"></app-table>
 
-  <div>
-    <app-boole-info
-      *ngIf="typeCalculator === booleType; else propositionInfo"
-    ></app-boole-info>
+    <div>
+      <app-boole-info
+        *ngIf="typeCalculator === booleType; else propositionInfo"
+      ></app-boole-info>
+    </div>
+
+    <a class="nav-home" (click)="toHome()">Realizar otro cálculo</a>
   </div>
 </ng-container>
 
