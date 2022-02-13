@@ -14,8 +14,8 @@ export class NavigationService {
     this.router.navigate([`/result/${type}`], { state: { arrayData } })
   }
 
-  public toHome(): void {
-    this.router.navigate([''])
+  public toHome(typeCalculator: Calculator): void {
+    this.router.navigate([''], { queryParams: { typeCalculator } })
   }
 
   public getNavigationExtras(): NavigationExtras {

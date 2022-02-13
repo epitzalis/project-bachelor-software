@@ -29,7 +29,7 @@ export class ResultComponent implements OnInit {
     this.typeCalculator = this.activatedRoute.snapshot.params?.type
     this.arrayData = this.getArrayData()
     if (!this.arrayData || !this.typeCalculator) {
-      this.navigationService.toHome()
+      this.navigationService.toHome(this.typeCalculator)
     }
   }
 
@@ -38,7 +38,7 @@ export class ResultComponent implements OnInit {
   }
 
   public toHome(): void {
-    this.navigationService.toHome()
+    this.navigationService.toHome(this.typeCalculator)
   }
 
   private getArrayData(): string[][] {

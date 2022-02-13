@@ -3,16 +3,20 @@
 <div class="container">
   <div class="tabs is-large">
     <ul>
-      <li [class.is-active]="isBooleSelected" (click)="onChangeSelect(true)">
+      <li
+        [class.is-active]="typeCalculator === booleType"
+        (click)="onChangeSelect(booleType)"
+      >
         <a>{{ "COMMONS.BOOLE" | translate }}</a>
       </li>
-      <li [class.is-active]="!isBooleSelected" (click)="onChangeSelect(false)">
+      <li
+        [class.is-active]="typeCalculator === propositionType"
+        (click)="onChangeSelect(propositionType)"
+      >
         <a>{{ "COMMONS.PROPOSITION" | translate }}</a>
       </li>
     </ul>
   </div>
 
-  <app-calculator
-    [iTypeCalculator]="isBooleSelected ? booleType : propositionType"
-  ></app-calculator>
+  <app-calculator [iTypeCalculator]="typeCalculator"></app-calculator>
 </div>
