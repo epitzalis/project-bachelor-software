@@ -11,22 +11,22 @@ import {
 export class PropositionInfoComponent implements OnInit {
   @Input() public rows: string[][]
 
-  public text: string
+  public textInfo: string
 
   ngOnInit(): void {
-    this.loadText()
+    this.loadInfo()
   }
 
-  private loadText(): void {
+  private loadInfo(): void {
     const resultPosition = this.rows[0].length - 1
     const totalResults = this.rows.length
     const totalTrues = this.rows.filter(item => item[resultPosition] === 'V').length
     if (totalTrues === 0) {
-      this.text = 'Esta tabla de la verdad es una contradicción'
+      this.textInfo = 'Esta tabla de la verdad es una contradicción'
     } else if (totalTrues === totalResults) {
-      this.text = 'Esta tabla de la verdad es una tautología'
+      this.textInfo = 'Esta tabla de la verdad es una tautología'
     } else {
-      this.text = 'Esta tabla de la verdad es una contingencia'
+      this.textInfo = 'Esta tabla de la verdad es una contingencia'
     }
   }
 }

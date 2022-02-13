@@ -1,1 +1,17 @@
-Boole info
+<ng-container *ngIf="numberVariables">
+  <div *ngIf="mintermText">
+    <h3>Minterm</h3>
+    <p>
+      ∑<sub>{{ numberVariables }}</sub
+      >({{ mintermText }})
+    </p>
+  </div>
+
+  <div *ngIf="maxtermText">
+    <h3>Maxterm</h3>
+    <p>
+      ∏<sub>{{ numberVariables }}</sub
+      >({{ maxtermText }})
+    </p>
+  </div>
+</ng-container>
