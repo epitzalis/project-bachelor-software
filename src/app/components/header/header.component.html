@@ -1,1 +1,46 @@
-Header
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img
+        src="https://www.url.edu/themes/custom/url_corporativo/images/logo.png"
+      />
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasic"
+      [class.is-active]="isOpen"
+      (click)="onClickBurger()"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasic" class="navbar-menu" [class.is-active]="isOpen">
+    <div class="navbar-start">
+      <a class="navbar-item"> Calculadora </a>
+
+      <a class="navbar-item"> Boole </a>
+
+      <a class="navbar-item"> Proposición </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link"> Español </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item"> Español </a>
+          <a class="navbar-item"> Catalán </a>
+          <a class="navbar-item"> Inglés </a>
+          <a class="navbar-item"> Alemán </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

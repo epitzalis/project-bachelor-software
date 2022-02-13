@@ -9,5 +9,9 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
+  public isOpen = false
 
+  public onClickBurger(): void {
+    this.isOpen = !this.isOpen
+  }
 }
