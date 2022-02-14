@@ -1,6 +1,7 @@
 import {
   Component, ViewEncapsulation,
 } from '@angular/core'
+import { NavigationEnd, Router } from '@angular/router'
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,20 @@ import {
 export class HeaderComponent {
   public isOpen = false
 
+  constructor(router: Router) {
+    router.events.forEach(event => {
+      if (event instanceof NavigationEnd) {
+        this.isOpen = false
+      }
+    })
+  }
+
   public onClickBurger(): void {
     this.isOpen = !this.isOpen
+  }
+
+  // todo
+  public onChangeLanguage(language: string): void {
+    this.isOpen = false
   }
 }

@@ -1,6 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" routerLink="/">
       <img src="../../../assets/img/logos/la_salle.png" />
     </a>
 
@@ -21,22 +21,40 @@
 
   <div id="navbarBasic" class="navbar-menu" [class.is-active]="isOpen">
     <div class="navbar-start">
-      <a class="navbar-item"> Calculadora </a>
+      <a
+        class="navbar-item"
+        [routerLink]="['/']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLinkActive]="'is-active'"
+      >
+        Calculadora
+      </a>
+      <a
+        class="navbar-item"
+        [routerLink]="['/boole']"
+        [routerLinkActive]="'is-active'"
+      >
+        Boole
+      </a>
 
-      <a class="navbar-item"> Boole </a>
-
-      <a class="navbar-item"> Proposición </a>
+      <a
+        class="navbar-item"
+        [routerLink]="['/proposition']"
+        [routerLinkActive]="'is-active'"
+      >
+        Proposición
+      </a>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link"> Español </a>
+        <a class="navbar-link">Español</a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item"> Español </a>
-          <a class="navbar-item"> Catalán </a>
-          <a class="navbar-item"> Inglés </a>
-          <a class="navbar-item"> Alemán </a>
+          <a class="navbar-item">Español</a>
+          <a class="navbar-item">Catalán</a>
+          <a class="navbar-item">Inglés</a>
+          <a class="navbar-item">Alemán</a>
         </div>
       </div>
     </div>
