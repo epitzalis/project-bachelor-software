@@ -1,0 +1,61 @@
+.header {
+  height: 100px;
+  background-color:#fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
+
+  &__container {
+    max-width: 1014px;
+    margin: auto;
+    height: 100%;
+
+    .navbar {
+      height: 100%;
+      background-color: transparent !important;
+      gap: 60px;
+
+      &-link {
+        &::after {
+          border-color: #c53f3c;
+
+        }
+
+        &:hover {
+          background-color: #c53f3c !important;
+          color: #fff;
+
+          &::after {
+            border-color: #fff;
+          }
+        }
+      }
+
+      &-dropdown a.navbar-item {
+        &:hover,
+        &:active {
+          background-color: #c53f3c !important;
+          color: #fff;
+        }
+      }
+
+      img {
+        min-height: 70% !important;
+      }
+
+      &-item {
+        img {
+          @media (max-width: 1024px) {
+            max-height: 3.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+//Angular
+a.navbar-item:hover, a.navbar-item.is-active,a.navbar-item:focus {
+  color: #4087b1;
+  transition: 0.3s;
+  font-weight: 800;
+  background-color: transparent;
+}

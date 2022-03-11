@@ -1,8 +1,40 @@
 @import "bulma/bulma.sass";
 
-html, 
+html,
 body {
     height: 100%;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   --scroll-behavior: smooth;
+   scroll-behavior: smooth;
+   line-height: 1.85rem;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  width: fit-content;
+  color: #c53f3c;
+
+    &::after {
+      background-color: #c53f3c;
+      content: ' ';
+      display: block;
+      height: 3px;
+      position: relative;
+      top: -1px;
+      transition: 0.3s ease-in-out;
+      width: 100%;
+      z-index: -1;
+  }
+
+    &:hover {
+      color: #c53f3c;
+
+      &::after {
+        width: 0;
+    }
+  }
 }
 
 .flex-full {
@@ -35,3 +67,81 @@ body {
     row-gap: 10px;
 }
 
+.margin-block-end {
+  margin-block-end: 0.8rem;
+}
+
+.margin-block-start {
+  margin-block-start:0.8rem;
+}
+
+//Text styles {
+  h1 {
+    font-size: 32px;
+    line-height: 3rem;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+//Hero
+.hero {
+  height: 50vh;
+  background-color: #4087b1;
+  position: relative;
+  margin-bottom: 4rem;
+
+  &__container {
+    max-width: 1024px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+
+    @media (min-width: 1024px) {
+      padding: 0;
+    }
+
+    &-text {
+      max-width: 600px;
+      color: #ffffff;
+    }
+
+    strong {
+      color: #ffffff;
+    }
+
+    &-arrow {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+//Container
+.container {
+  padding: 0 20px;
+
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+.container-small {
+  padding: 0 20px;
+  max-width: 1024px;
+  margin: auto;
+
+  @media (max-width: 1024px) {
+    padding: 0;
+  }
+}

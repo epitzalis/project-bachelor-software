@@ -1,0 +1,10 @@
+.parragraf {
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.image-character {
+  @media (max-width: 769px) {
+    width: 100% !important;
+  }
+}
