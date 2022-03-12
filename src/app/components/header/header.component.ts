@@ -1,7 +1,6 @@
-import {
-  Component, ViewEncapsulation,
-} from '@angular/core'
+import { Component, ViewEncapsulation, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
+import { LanguageService } from '@services/language.service'
 
 @Component({
   selector: 'app-header',
@@ -9,23 +8,36 @@ import { NavigationEnd, Router } from '@angular/router'
   styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   public isOpen = false
 
-  constructor(router: Router) {
-    router.events.forEach(event => {
-      if (event instanceof NavigationEnd) {
-        this.isOpen = false
-      }
-    })
+  public selectedLanguage: string
+
+  constructor(
+    private readonly router: Router,
+    private readonly languageService: LanguageService,
+  ) {
+    this.attachCloseMenu()
+  }
+
+  ngOnInit(): void {
+    this.selectedLanguage = `LANGUAGE.${this.languageService.language.toUpperCase()}`
   }
 
   public onClickBurger(): void {
     this.isOpen = !this.isOpen
   }
 
-  // todo
   public onChangeLanguage(language: string): void {
-    this.isOpen = false
+    this.languageService.language = language
+    this.languageService.view.location.reload()
+  }
+
+  private attachCloseMenu(): void {
+    this.router.events.forEach(event => {
+      if (event instanceof NavigationEnd) {
+        this.isOpen = false
+      }
+    })
   }
 }

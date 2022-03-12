@@ -51,10 +51,10 @@
         "PROPOSITION": "Resultado cálculo proposicional"
     },
     "LANGUAGE": {
-        "SPANISH": "Español",
-        "CATALAN": "Catalán",
-        "ENGLISH": "Inglés",
-        "GERMAN": "Alemán"
+        "ES": "Español",
+        "CA": "Catalán",
+        "EN": "Inglés",
+        "DE": "Alemán"
     },
     "HEADER": {
         "CALCULATION": "Cálculo",

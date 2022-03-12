@@ -49,13 +49,24 @@
         </div>
 
         <div class="navbar-end">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">{{ "LANGUAGE.SPANISH" | translate }}</a>
+          <div
+            *ngIf="selectedLanguage"
+            class="navbar-item has-dropdown is-hoverable"
+          >
+            <a class="navbar-link">{{ selectedLanguage | translate }}</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item">{{ "LANGUAGE.SPANISH" | translate }}</a>
-              <a class="navbar-item">{{ "LANGUAGE.CATALAN" | translate }}</a>
-              <a class="navbar-item">{{ "LANGUAGE.ENGLISH" | translate }}</a>
-              <a class="navbar-item">{{ "LANGUAGE.GERMAN" | translate }}</a>
+              <a class="navbar-item" (click)="onChangeLanguage('es')">{{
+                "LANGUAGE.ES" | translate
+              }}</a>
+              <a class="navbar-item" (click)="onChangeLanguage('ca')">{{
+                "LANGUAGE.CA" | translate
+              }}</a>
+              <a class="navbar-item" (click)="onChangeLanguage('en')">{{
+                "LANGUAGE.EN" | translate
+              }}</a>
+              <a class="navbar-item" (click)="onChangeLanguage('de')">{{
+                "LANGUAGE.DE" | translate
+              }}</a>
             </div>
           </div>
         </div>
