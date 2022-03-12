@@ -1,6 +1,8 @@
 <ng-container *ngIf="typeCalculator && columns && rows">
   <div class="result container">
-    <h1>Result {{ typeCalculator }}</h1>
+    <h1 *ngIf="typeCalculator === booleType; else propositiontTitle">
+      {{ "RESULT.BOOLE" | translate }}
+    </h1>
 
     <app-table [columns]="columns" [rows]="rows"></app-table>
 
@@ -11,10 +13,16 @@
       ></app-boole-info>
     </div>
 
-    <a class="nav-home" (click)="toHome()">Realizar otro cálculo</a>
+    <a class="nav-home" (click)="toHome()">{{
+      "RESULT.OTHER_CALCULATION" | translate
+    }}</a>
   </div>
 </ng-container>
 
 <ng-template #propositionInfo>
   <app-proposition-info [rows]="rows"></app-proposition-info>
+</ng-template>
+
+<ng-template #propositiontTitle>
+  <h1>{{ "RESULT.PROPOSITION" | translate }}</h1>
 </ng-template>

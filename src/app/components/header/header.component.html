@@ -6,8 +6,15 @@
           <img src="../../../assets/img/logos/la_salle.png" />
         </a>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic"
-          [class.is-active]="isOpen" (click)="onClickBurger()">
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasic"
+          [class.is-active]="isOpen"
+          (click)="onClickBurger()"
+        >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -16,28 +23,39 @@
 
       <div id="navbarBasic" class="navbar-menu" [class.is-active]="isOpen">
         <div class="navbar-start">
-          <a class="navbar-item" [routerLink]="['/']" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLinkActive]="'is-active'">
-            Calculadora
+          <a
+            class="navbar-item"
+            [routerLink]="['/']"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [routerLinkActive]="'is-active'"
+          >
+            {{ "HEADER.CALCULATION" | translate }}
           </a>
-          <a class="navbar-item" [routerLink]="['/boole']" [routerLinkActive]="'is-active'">
-            Boole
+          <a
+            class="navbar-item"
+            [routerLink]="['/boole']"
+            [routerLinkActive]="'is-active'"
+          >
+            {{ "HEADER.BOOLE" | translate }}
           </a>
 
-          <a class="navbar-item" [routerLink]="['/proposition']" [routerLinkActive]="'is-active'">
-            Proposición
+          <a
+            class="navbar-item"
+            [routerLink]="['/proposition']"
+            [routerLinkActive]="'is-active'"
+          >
+            {{ "HEADER.PROPOSITION" | translate }}
           </a>
         </div>
 
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">Español</a>
-
+            <a class="navbar-link">{{ "LANGUAGE.SPANISH" | translate }}</a>
             <div class="navbar-dropdown">
-              <a class="navbar-item">Español</a>
-              <a class="navbar-item">Catalán</a>
-              <a class="navbar-item">Inglés</a>
-              <a class="navbar-item">Alemán</a>
+              <a class="navbar-item">{{ "LANGUAGE.SPANISH" | translate }}</a>
+              <a class="navbar-item">{{ "LANGUAGE.CATALAN" | translate }}</a>
+              <a class="navbar-item">{{ "LANGUAGE.ENGLISH" | translate }}</a>
+              <a class="navbar-item">{{ "LANGUAGE.GERMAN" | translate }}</a>
             </div>
           </div>
         </div>

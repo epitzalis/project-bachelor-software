@@ -1,14 +1,21 @@
 <section class="hero">
   <div class="hero__container">
     <div class="hero__container-text">
-      <h1><strong>¿Qué puede hacer esta calculadora?</strong></h1>
-      <br>
-      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit voluptas neque beatae sequi dolorum, illum quas
-        totam adipisci corporis amet optio fuga quo minus! Tenetur, numquam?</h3>
+      <h1>
+        <strong>{{ "HOME.HERO_TITLE" | translate }}</strong>
+      </h1>
+      <br />
+      <h3>{{ "HOME.HERO_SUBTITLE" | translate }}</h3>
     </div>
     <div class="hero__container-arrow">
       <a href="#calculator">
-        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#ffffff"
+        >
           <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />
           <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />
         </svg>
@@ -20,10 +27,16 @@
   <div id="calculator" class="container">
     <div class="tabs is-large">
       <ul>
-        <li [class.is-active]="typeCalculator === booleType" (click)="onChangeSelect(booleType)">
+        <li
+          [class.is-active]="typeCalculator === booleType"
+          (click)="onChangeSelect(booleType)"
+        >
           <a>{{ "COMMONS.BOOLE" | translate }}</a>
         </li>
-        <li [class.is-active]="typeCalculator === propositionType" (click)="onChangeSelect(propositionType)">
+        <li
+          [class.is-active]="typeCalculator === propositionType"
+          (click)="onChangeSelect(propositionType)"
+        >
           <a>{{ "COMMONS.PROPOSITION" | translate }}</a>
         </li>
       </ul>

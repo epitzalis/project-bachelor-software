@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { TranslateModule } from '@ngx-translate/core'
 import { PropositionDetailComponent } from './proposition-detail.component'
 import { PropositionDetailRoutingModule } from './proposition-detail-routing.module'
 
@@ -9,6 +10,7 @@ import { PropositionDetailRoutingModule } from './proposition-detail-routing.mod
   ],
   imports: [
     CommonModule,
+    TranslateModule,
     PropositionDetailRoutingModule,
   ],
   exports: [

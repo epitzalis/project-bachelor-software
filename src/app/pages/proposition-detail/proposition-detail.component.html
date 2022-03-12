@@ -1,7 +1,9 @@
 <section class="hero">
   <div class="hero__container">
     <div class="hero__container-text">
-      <h1><strong>Cálculo proposicional</strong></h1>
+      <h1>
+        <strong>{{ "PROPOSITION.HERO_TITLE" | translate }}</strong>
+      </h1>
     </div>
     <div class="hero__container-arrow">
       <a href="proposition#theory">
@@ -22,24 +24,19 @@
 <section id="theory">
   <div class="container-small">
     <div class="parragraf">
-      <h1><strong>Cálculo proposicional</strong></h1>
+      <h2 class="margin-block-end">
+        <strong>{{ "PROPOSITION.P1_TITLE" | translate }}</strong>
+      </h2>
       <p>
-        Una proposición es cualquier frase que tenga un valor de verdad
-        definodo, ya sea verdadero o falso. Por ejemplo:
+        {{ "PROPOSITION.P1_CONTENT_1" | translate }}
       </p>
-      <p>
-        Está lloviendo. A esta proposición podemos llamarle
-        <strong>"p"</strong>, y podrá ser verdadera o falsa.
-      </p>
+      <p [innerHTML]="'PROPOSITION.P1_CONTENT_2' | translate"></p>
     </div>
     <div class="parragraf">
-      <h2><strong>Tabla de la verdad</strong></h2>
-      <p>
-        Son tablas que representan las posibles salidas que puede tener un
-        cálculo proposicional en función de unos valores de entrada. En la
-        siguiente imagen podemos ver una tabla de la verdad que nos muestra los
-        posibles resultados de <strong>p^q</strong>
-      </p>
+      <h2 class="margin-block-end">
+        <strong>{{ "PROPOSITION.P2_TITLE" | translate }}</strong>
+      </h2>
+      <p [innerHTML]="'PROPOSITION.P2_CONTENT_1' | translate"></p>
       <br />
       <img
         style="width: 300px"
@@ -50,21 +47,13 @@
     </div>
 
     <div class="parragraf">
-      <h2><strong>Tautología, contradicción y contingencia</strong></h2>
-      <p>
-        La <strong>tautología</strong> tiene lugar cuando todos los resultados
-        de la tabla de la verdad son verdaderos.
-      </p>
-      <p>
-        La <strong>contradicción</strong> tiene lugar cuando todos los
-        resultados de la tabla de la verdad son falsos.
-      </p>
-      <p>
-        La <strong>contingencia</strong> tiene lugar cuando en los resultados de
-        tabla de la verdad encontramos valores verdaderos y falsos.
-      </p>
-      <br />
-      <p>Ejemplo de contingencia:</p>
+      <h2 class="margin-block-end">
+        <strong>{{ "PROPOSITION.P3_TITLE" | translate }}</strong>
+      </h2>
+      <p [innerHTML]="'PROPOSITION.P3_CONTENT_1' | translate"></p>
+      <p [innerHTML]="'PROPOSITION.P3_CONTENT_2' | translate"></p>
+      <p [innerHTML]="'PROPOSITION.P3_CONTENT_3' | translate"></p>
+      <p>{{ "PROPOSITION.P3_CONTENT_4" | translate }}</p>
       <br />
       <img
         style="width: 240px"
