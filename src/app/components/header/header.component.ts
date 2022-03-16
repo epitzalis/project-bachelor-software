@@ -13,6 +13,8 @@ export class HeaderComponent implements OnInit {
 
   public selectedLanguage: string
 
+  public selectedFlag: string
+
   constructor(
     private readonly router: Router,
     private readonly languageService: LanguageService,
@@ -21,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.selectedFlag = this.languageService.language
     this.selectedLanguage = `LANGUAGE.${this.languageService.language.toUpperCase()}`
   }
 

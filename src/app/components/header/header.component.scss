@@ -50,6 +50,15 @@
       }
     }
   }
+  
+  .flag {
+    margin-right: 1em;
+    width: 20px;
+    @media (max-width: 1024px) {
+      margin-bottom: -5px;
+    }
+  }
+
 }
 
 //Angular
