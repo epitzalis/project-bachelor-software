@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core'
+import { DOCUMENT } from '@angular/common'
+import {
+  Component, Inject, OnInit, ViewEncapsulation,
+} from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { booleType, Calculator } from '@models/calculator.dto'
 import { NavigationService } from '@services/navigation.service'
@@ -25,6 +28,7 @@ export class ResultComponent implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly navigationService: NavigationService,
+    @Inject(DOCUMENT) private readonly document: Document,
   ) {
     this.typeCalculator = this.activatedRoute.snapshot.params?.type
     this.arrayData = this.getArrayData()
@@ -35,6 +39,7 @@ export class ResultComponent implements OnInit {
 
   public ngOnInit(): void {
     this.loadTable()
+    this.document.defaultView.scrollTo(0, 0)
   }
 
   public toHome(): void {
