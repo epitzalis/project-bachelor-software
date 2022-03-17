@@ -1,6 +1,7 @@
 import {
   Component, ViewEncapsulation, OnInit, Input,
 } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   selector: 'app-proposition-info',
@@ -13,20 +14,26 @@ export class PropositionInfoComponent implements OnInit {
 
   public textInfo: string
 
+  constructor(
+    private readonly translateService: TranslateService,
+  ) {}
+
   ngOnInit(): void {
     this.loadInfo()
   }
 
   private loadInfo(): void {
-    const resultPosition = this.rows[0].length - 1
-    const totalResults = this.rows.length
-    const totalTrues = this.rows.filter(item => item[resultPosition] === 'V').length
-    if (totalTrues === 0) {
-      this.textInfo = 'Esta tabla de la verdad es una contradicción'
-    } else if (totalTrues === totalResults) {
-      this.textInfo = 'Esta tabla de la verdad es una tautología'
-    } else {
-      this.textInfo = 'Esta tabla de la verdad es una contingencia'
+    if (this.rows) {
+      const resultPosition = this.rows[0].length - 1
+      const totalResults = this.rows.length
+      const totalTrues = this.rows.filter(item => item[resultPosition] === 'V').length
+      if (totalTrues === 0) {
+        this.textInfo = this.translateService.instant('RESULT.CONTRADICTION')
+      } else if (totalTrues === totalResults) {
+        this.textInfo = this.translateService.instant('RESULT.TAUTOLOGY')
+      } else {
+        this.textInfo = this.translateService.instant('RESULT.CONTINGENCY')
+      }
     }
   }
 }

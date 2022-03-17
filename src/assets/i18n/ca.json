@@ -48,7 +48,10 @@
     "RESULT": {
         "OTHER_CALCULATION": "Realitzar un altre càlcul",
         "BOOLE": "Resultat àlgebra de boole",
-        "PROPOSITION": "Resultat càlcul proposicional"
+        "PROPOSITION": "Resultat càlcul proposicional",
+        "CONTRADICTION": "Aquesta taula de la veritat és una contradicció",
+        "TAUTOLOGY": "Aquesta taula de la veritat és una tautologia",
+        "CONTINGENCY": "Aquesta taula de la veritat és una contingència"
     },
     "LANGUAGE": {
         "ES": "Espanyol",
