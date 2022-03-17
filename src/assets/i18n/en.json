@@ -48,7 +48,10 @@
     "RESULT": {
         "OTHER_CALCULATION": "Perform another calculation",
         "BOOLE": "Boolean Algebra Result",
-        "PROPOSITION": "Propositional calculation result"
+        "PROPOSITION": "Propositional calculation result",
+        "CONTRADICTION": "This truth table is a contradiction",
+        "TAUTOLOGY": "This truth table is a tautology",
+        "CONTINGENCY": "This truth table is a contingency"
     },
     "LANGUAGE": {
         "ES": "Spanish",

@@ -48,7 +48,10 @@
     "RESULT": {
         "OTHER_CALCULATION": "Eine weitere Berechnung durchführen",
         "BOOLE": "Ergebnis der Booleschen Algebra",
-        "PROPOSITION": "Ergebnis der Propositionenberechnung"
+        "PROPOSITION": "Ergebnis der Propositionenberechnung",
+        "CONTRADICTION": "Diese Wahrheitstabelle ist eine Kontradiktion",
+        "TAUTOLOGY": "Diese Wahrheitstabelle ist eine Tautologie",
+        "CONTINGENCY": "Diese Wahrheitstabelle ist eine Kontingenz"
     },
     "LANGUAGE": {
         "ES": "Spanisch",
