@@ -1,5 +1,68 @@
 {
     "COMMONS": {
-        "TITLE": "Bachelor software final project"
+        "TITLE": "Truth Tables Academic Mathematics Module",
+        "NAME_DEGREE": "Bachelor Degree in Software Application Techniques",
+        "AUTHOR": "Efisio Pitzalis Morillas",
+        "UNIVERSITY": "La Salle Ramon Llull University",
+        "BOOLE": "Boole",
+        "PROPOSITION": "Proposition"
+    },
+    "ERROR": {
+        "AFTER_NEGATIVE": "After a negative symbol you can only put a variable",
+        "AFTER_OPERATOR": "After an operator can only go a variable or an opening parenthesis",
+        "AFTER_VARIABLE": "Only an operator or closing parenthesis can go after a variable",
+        "AFTER_OPEN_PARENTHESES": "Only a negative symbol, opening parenthesis, or variable can go after a start parenthesis",
+        "AFTER_CLOSE_PARENTHESES": "Only a negative symbol, opening parenthesis, or variable can follow a closing parenthesis",
+        "GENERAL": "You have entered an incorrect sentence"
+    },
+    "HOME": {
+        "HERO_TITLE": "What can this math module do?",
+        "HERO_SUBTITLE": "Allows truth table results. In the case of the calculation of propositions, it will indicate whether it is a tautology, contradiction or contingency, and in the case of Boolean algebra, the maxterm and minterm will be calculated."
+    },
+    "BOOLE": {
+        "HERO_TITLE": "Boolean algebra",
+        "P1_TITLE": "Boolean algebra",
+        "P1_CONTENT_1": "It is a special branch of algebra that is mainly used in digital electronics to simplify logic circuits",
+        "P1_CONTENT_2": "Boolean logic only allows two states of the circuit represented by 1 or 0, where 1 represents the true state and 0 represents the false state",
+        "P2_TITLE": "Truth table",
+        "P2_CONTENT_1": "They are tables that represent the possible outputs that a logic circuit can have depending on the input values. In the following image we can see a truth table that shows us the possible results of the function \"q\" for an input \"a\" and \"b\"",
+        "P3_TITLE": "Canonical form",
+        "P3_CONTENT_1": "It is a boolean function where all its terms are sums or products of all its input variables. With the canonical form, electronic circuits can be simplified. Thanks to the above truth table, it is easier to obtain the following canonical form of a function",
+        "P4_TITLE": "Minterm and Maxterm",
+        "P4_CONTENT_1": "The <strong>minterm</strong> is the sum of the terms of the function and the product of the variables within the different terms. It directly indicates the function result equal to one (q=1).",
+        "P4_CONTENT_2": "The <strong>maxterm</strong> is the product of the terms of the function and the sum of the variables within the different terms. It directly indicates the function result equal to zero (q=0)."
+    },
+    "PROPOSITION": {
+        "HERO_TITLE": "Propositional calculus",
+        "P1_TITLE": "Propositional calculus",
+        "P1_CONTENT_1": "A proposition is any theorem that has a definite truth value, either true or false. For example:",
+        "P1_CONTENT_2": "It's raining. We can call this proposition <strong>\"p\"</strong>, and it may be true or false.",
+        "P2_TITLE": "Truth table",
+        "P2_CONTENT_1": "They are tables that represent the possible outputs that a propositional calculus can have based on input values. In the following image we can see a truth table that shows us the possible results of <strong>p^q</strong>.",
+        "P3_TITLE": "Tautology, contradiction and contingency",
+        "P3_CONTENT_1": "The <strong>tautology</strong> occurs when all the results of the truth table are true.",
+        "P3_CONTENT_2": "The <strong>contradiction</strong> occurs when all the results of the truth table are false.",
+        "P3_CONTENT_3": "The <strong>contingency</strong> occurs when in the results we find in the truth table are both true or false.",
+        "P3_CONTENT_4": "Example for a contingency:"
+    },
+    "RESULT": {
+        "OTHER_CALCULATION": "Perform another calculation",
+        "BOOLE": "Boolean Algebra Result",
+        "PROPOSITION": "Propositional calculation result"
+    },
+    "LANGUAGE": {
+        "ES": "Spanish",
+        "CA": "Catalan",
+        "EN": "English",
+        "DE": "German"
+    },
+    "HEADER": {
+        "CALCULATION": "Calculus",
+        "BOOLE": "Boolean algebra",
+        "PROPOSITION": "Propositional calculus"
+    },
+    "FOOTER": {
+        "TFG_BY": "TFG developed by",
+        "TFG_TO": "for the"
     }
 }
