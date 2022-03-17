@@ -3,6 +3,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { TranslateModule } from '@ngx-translate/core'
 import { PropositionInfoComponent } from './proposition-info.component'
 
+const rowsMock = [
+  ['F', 'F', 'F'],
+  ['F', 'V', 'F'],
+  ['V', 'F', 'F'],
+  ['V', 'V', 'V'],
+]
+
 describe('PropositionInfoComponent', () => {
   let component: PropositionInfoComponent
   let fixture: ComponentFixture<PropositionInfoComponent>
@@ -22,6 +29,7 @@ describe('PropositionInfoComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PropositionInfoComponent)
     component = fixture.componentInstance
+    component['rows'] = rowsMock
     fixture.detectChanges()
   })
 

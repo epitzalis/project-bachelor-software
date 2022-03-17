@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { TranslateModule } from '@ngx-translate/core'
 import { RouterTestingModule } from '@angular/router/testing'
 import { HomeComponent } from './home.component'
+import { NavigationService } from '../../services/navigation.service'
 
 describe('HomeComponent', () => {
   let component: HomeComponent
@@ -17,6 +18,9 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
       ],
+      providers: [
+        NavigationService,
+      ],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents()
   })
@@ -29,5 +33,13 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy()
+  })
+
+  it('onChange Select changes calculator type', () => {
+    const service = TestBed.inject(NavigationService)
+    const spy = spyOn(service, 'toHome').and.callFake(() => null)
+    component.onChangeSelect('proposition')
+    expect(spy).toHaveBeenCalled()
+    expect(component.typeCalculator).toBe('proposition')
   })
 })

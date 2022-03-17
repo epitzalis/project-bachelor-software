@@ -46,6 +46,7 @@
     "no-restricted-syntax": 0,
     "guard-for-in": 0,
     "no-plusplus": 0,
+    "dot-notation": 0,
     "import/namespace": "error",
     "import/imports-first": "error",
     "arrow-parens": [
