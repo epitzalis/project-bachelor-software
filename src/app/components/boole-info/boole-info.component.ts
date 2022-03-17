@@ -22,18 +22,20 @@ export class BooleInfoComponent implements OnInit {
   }
 
   private loadInfo(): void {
-    this.numberVariables = this.rows[0].length - 1
-    const mintermPositions = []
-    const maxtermPositions = []
-    for (let i = 0; i < this.rows.length; i++) {
-      const value = this.rows[i][this.numberVariables]
-      if (value === '0') {
-        maxtermPositions.push(i)
-      } else {
-        mintermPositions.push(i)
+    if (this.rows) {
+      this.numberVariables = this.rows[0]?.length - 1
+      const mintermPositions = []
+      const maxtermPositions = []
+      for (let i = 0; i < this.rows.length; i++) {
+        const value = this.rows[i][this.numberVariables]
+        if (value === '0') {
+          maxtermPositions.push(i)
+        } else {
+          mintermPositions.push(i)
+        }
       }
+      this.maxtermText = maxtermPositions.join(',')
+      this.mintermText = mintermPositions.join(',')
     }
-    this.maxtermText = maxtermPositions.join(',')
-    this.mintermText = mintermPositions.join(',')
   }
 }

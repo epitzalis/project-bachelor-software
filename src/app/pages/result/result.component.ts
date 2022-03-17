@@ -42,7 +42,7 @@ export class ResultComponent implements OnInit {
   }
 
   private getArrayData(): string[][] {
-    return this.navigationService.getNavigationExtras().state?.arrayData
+    return this.navigationService.getNavigationExtras()?.state?.arrayData
   }
 
   private loadTable(): void {

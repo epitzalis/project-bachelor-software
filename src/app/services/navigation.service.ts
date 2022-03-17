@@ -19,6 +19,6 @@ export class NavigationService {
   }
 
   public getNavigationExtras(): NavigationExtras {
-    return this.router.getCurrentNavigation().extras
+    return this.router.getCurrentNavigation()?.extras
   }
 }
