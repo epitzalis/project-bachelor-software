@@ -34,9 +34,14 @@ describe('ResultComponent', () => {
   })
 
   beforeEach(() => {
+    const service = TestBed.inject(NavigationService)
+    spyOn(service, 'getNavigationExtras').and.callFake(() => ({
+      state: {
+        arrayData: arrayDataMock,
+      },
+    }))
     fixture = TestBed.createComponent(ResultComponent)
     component = fixture.componentInstance
-    component['arrayData'] = arrayDataMock
     fixture.detectChanges()
   })
 
