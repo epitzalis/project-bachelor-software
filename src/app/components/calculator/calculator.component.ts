@@ -96,22 +96,27 @@ export class CalculatorComponent implements OnInit, OnDestroy {
       const universalValue = this.conversionService.convertToUniversal(this.valueCalculator)
       const usedVariables = this.calculatorService.getUsedVariables(universalValue)
       if (usedVariables.length) {
-        // Se crea el primer nivel con los títulos
-        const headData = this.calculatorService.getHeadArrayData(universalValue, usedVariables)
-        let arrayData: string[][] = [headData]
-        // Crear entradas vacías de los arrays
-        arrayData = this.calculatorService.createResultEntries(arrayData, usedVariables)
-        // Se Rellena la matriz con valores verdaderos o falsos de cada variable
-        arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
-        // Calcula los resultados de la tabla
-        arrayData = this.calculatorService.calculateArrayData(arrayData)
-        if (this.typeCalculator === propositionType) {
-          // En caso de ser una proposición, hay que volver a pasar a proposición la tabla
-          arrayData = this.conversionService.convertToProposition(arrayData)
-        }
+        const arrayData = this.calculateArrayData(universalValue, usedVariables)
         this.navigationService.toResult(this.typeCalculator, arrayData)
       }
     }
+  }
+
+  private calculateArrayData(universalValue: string, usedVariables: string[]): string[][] {
+    // Se crea el primer nivel con los títulos
+    const headData = this.calculatorService.getHeadArrayData(universalValue, usedVariables)
+    let arrayData: string[][] = [headData]
+    // Crear entradas vacías de los arrays
+    arrayData = this.calculatorService.createResultEntries(arrayData, usedVariables)
+    // Se Rellena la matriz con valores verdaderos o falsos de cada variable
+    arrayData = this.calculatorService.fillInitialValues(arrayData, usedVariables)
+    // Calcula los resultados de la tabla
+    arrayData = this.calculatorService.calculateArrayData(arrayData)
+    if (this.typeCalculator === propositionType) {
+      // En caso de ser una proposición, hay que volver a pasar a proposición la tabla
+      arrayData = this.conversionService.convertToProposition(arrayData)
+    }
+    return arrayData
   }
 
   private validateCharacter(character: string, lastCharacter: string): boolean {
@@ -123,7 +128,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
       errorMessage = this.translateService.instant('ERROR.AFTER_NEGATIVE')
       isValid = variableSymbols.includes(character) || openParenthesesSymbols === character
     } else if (operatorSymbols.includes(lastCharacter)) {
-      // Después de un operador solo puede ir una variable o una apertura de paréntesis
+      // Después de un operador solo puede ir una variable, símbolo negativo o una apertura de paréntesis
       errorMessage = this.translateService.instant('ERROR.AFTER_OPERATOR')
       isValid = variableSymbols.includes(character)
               || character === openParenthesesSymbols || negativeSymbols.includes(character)
