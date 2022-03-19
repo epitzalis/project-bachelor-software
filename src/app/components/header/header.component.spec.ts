@@ -1,7 +1,8 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { TranslateModule } from '@ngx-translate/core'
-import { RouterTestingModule } from '@angular/router/testing'
+import { NavigationEnd, Router } from '@angular/router'
+import { Observable } from 'rxjs'
 import { HeaderComponent } from './header.component'
 import { LanguageService } from '../../services/language.service'
 
@@ -14,6 +15,15 @@ const languageServiceMock = {
   },
 }
 
+class RouterMock {
+  public ne = new NavigationEnd(0, '_url', '_url_after_redirects')
+
+  public events = new Observable(observer => {
+    observer.next(this.ne)
+    observer.complete()
+  })
+}
+
 describe('HeaderComponent', () => {
   let component: HeaderComponent
   let fixture: ComponentFixture<HeaderComponent>
@@ -22,7 +32,6 @@ describe('HeaderComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot(),
-        RouterTestingModule,
       ],
       declarations: [
         HeaderComponent,
@@ -31,6 +40,10 @@ describe('HeaderComponent', () => {
         {
           provide: LanguageService,
           useValue: languageServiceMock,
+        },
+        {
+          provide: Router,
+          useClass: RouterMock,
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],
