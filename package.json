@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "eslint -c .eslintrc.json --ext .ts src/app",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc": "npx compodoc -p tsconfig.doc.json"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,7 @@
     "@angular-devkit/build-angular": "~13.2.3",
     "@angular/cli": "~13.2.3",
     "@angular/compiler-cli": "~13.2.2",
+    "@compodoc/compodoc": "~1.1.19",
     "@types/jasmine": "~3.8.0",
     "@types/node": "~12.11.1",
     "@typescript-eslint/eslint-plugin": "~5.6.0",

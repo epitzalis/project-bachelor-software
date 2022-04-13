@@ -1,0 +1,382 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>project-bachelor-software documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">project-bachelor-software documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  BooleDetailComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/boole-detail/boole-detail.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-boole-detail</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./boole-detail.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./boole-detail.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ViewEncapsulation } from &#x27;@angular/core&#x27;
+
+@Component({
+  selector: &#x27;app-boole-detail&#x27;,
+  templateUrl: &#x27;./boole-detail.component.html&#x27;,
+  styleUrls: [&#x27;./boole-detail.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None,
+})
+export class BooleDetailComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;section class&#x3D;&quot;hero&quot;&gt;
+  &lt;div class&#x3D;&quot;hero__container&quot;&gt;
+    &lt;div class&#x3D;&quot;hero__container-text&quot;&gt;
+      &lt;h1&gt;
+        &lt;strong&gt;{{ &quot;BOOLE.HERO_TITLE&quot; | translate }}&lt;/strong&gt;
+      &lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;hero__container-arrow&quot;&gt;
+      &lt;a href&#x3D;&quot;boole#theory&quot;&gt;
+        &lt;svg
+          xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+          height&#x3D;&quot;24px&quot;
+          viewBox&#x3D;&quot;0 0 24 24&quot;
+          width&#x3D;&quot;24px&quot;
+          fill&#x3D;&quot;#ffffff&quot;
+        &gt;
+          &lt;path d&#x3D;&quot;M24 24H0V0h24v24z&quot; fill&#x3D;&quot;none&quot; opacity&#x3D;&quot;.87&quot; /&gt;
+          &lt;path d&#x3D;&quot;M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z&quot; /&gt;
+        &lt;/svg&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+&lt;section id&#x3D;&quot;theory&quot;&gt;
+  &lt;div class&#x3D;&quot;container-small&quot;&gt;
+    &lt;div class&#x3D;&quot;parragraf&quot;&gt;
+      &lt;h2 class&#x3D;&quot;margin-block-end&quot;&gt;
+        &lt;strong&gt;{{ &quot;BOOLE.P1_TITLE&quot; | translate }}&lt;/strong&gt;
+      &lt;/h2&gt;
+      &lt;p&gt;{{ &quot;BOOLE.P1_CONTENT_1&quot; | translate }}.&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;p&gt;{{ &quot;BOOLE.P1_CONTENT_2&quot; | translate }}.&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;h2 class&#x3D;&quot;margin-block-end&quot;&gt;
+        &lt;strong&gt;{{ &quot;BOOLE.P2_TITLE&quot; | translate }}&lt;/strong&gt;
+      &lt;/h2&gt;
+      &lt;p&gt;{{ &quot;BOOLE.P2_CONTENT_1&quot; | translate }}.&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;img
+        style&#x3D;&quot;width: 320px&quot;
+        class&#x3D;&quot;image-character&quot;
+        src&#x3D;&quot;../../../assets/img/detail_page/boole/true_table.png&quot;
+        alt&#x3D;&quot;true table&quot;
+      /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;parragraf&quot;&gt;
+      &lt;h2 class&#x3D;&quot;margin-block-end&quot;&gt;
+        &lt;strong&gt;{{ &quot;BOOLE.P3_TITLE&quot; | translate }}&lt;/strong&gt;
+      &lt;/h2&gt;
+      &lt;p&gt;{{ &quot;BOOLE.P3_CONTENT_1&quot; | translate }}.&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;img
+        style&#x3D;&quot;width: 460px&quot;
+        class&#x3D;&quot;image-character&quot;
+        src&#x3D;&quot;../../../assets/img/detail_page/boole/canonical.png&quot;
+        alt&#x3D;&quot;canonical&quot;
+      /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;parragraf&quot;&gt;
+      &lt;h2 class&#x3D;&quot;margin-block-end&quot;&gt;
+        &lt;strong&gt;{{ &quot;BOOLE.P4_TITLE&quot; | translate }}&lt;/strong&gt;
+      &lt;/h2&gt;
+      &lt;p [innerHTML]&#x3D;&quot;&#x27;BOOLE.P4_CONTENT_1&#x27; | translate&quot;&gt;&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;p [innerHTML]&#x3D;&quot;&#x27;BOOLE.P4_CONTENT_2&#x27; | translate&quot;&gt;&lt;/p&gt;
+      &lt;br /&gt;
+      &lt;img
+        style&#x3D;&quot;width: 320px&quot;
+        class&#x3D;&quot;image-character&quot;
+        src&#x3D;&quot;../../../assets/img/detail_page/boole/minterm_maxterm.png&quot;
+        alt&#x3D;&quot;canonical&quot;
+      /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./boole-detail.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.parragraf {
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.table {
+   padding: 40px;
+   background-color: #f5f5f5;
+   border-radius: 10px;
+   width: fit-content;
+
+
+  p {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+   &amp;-grid {
+     display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .first-line {
+        border-bottom: solid;
+      }
+
+      &amp;-column {
+
+        &amp;-text {
+          &amp;::after {
+            content: &#x27; → minterm&#x27;;
+          }
+        }
+      }
+   }
+}
+
+.image-character {
+  @media (max-width: 769px) {
+    width: 100% !important;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><section class="hero">  <div class="hero__container">    <div class="hero__container-text">      <h1>        <strong>{{ "BOOLE.HERO_TITLE" | translate }}</strong>      </h1>    </div>    <div class="hero__container-arrow">      <a href="boole#theory">        <svg          xmlns="http://www.w3.org/2000/svg"          height="24px"          viewBox="0 0 24 24"          width="24px"          fill="#ffffff"        >          <path d="M24 24H0V0h24v24z" fill="none" opacity=".87" />          <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z" />        </svg>      </a>    </div>  </div></section><section id="theory">  <div class="container-small">    <div class="parragraf">      <h2 class="margin-block-end">        <strong>{{ "BOOLE.P1_TITLE" | translate }}</strong>      </h2>      <p>{{ "BOOLE.P1_CONTENT_1" | translate }}.</p>      <br />      <p>{{ "BOOLE.P1_CONTENT_2" | translate }}.</p>      <br />      <h2 class="margin-block-end">        <strong>{{ "BOOLE.P2_TITLE" | translate }}</strong>      </h2>      <p>{{ "BOOLE.P2_CONTENT_1" | translate }}.</p>      <br />      <img        style="width: 320px"        class="image-character"        src="../../../assets/img/detail_page/boole/true_table.png"        alt="true table"      />    </div>    <div class="parragraf">      <h2 class="margin-block-end">        <strong>{{ "BOOLE.P3_TITLE" | translate }}</strong>      </h2>      <p>{{ "BOOLE.P3_CONTENT_1" | translate }}.</p>      <br />      <img        style="width: 460px"        class="image-character"        src="../../../assets/img/detail_page/boole/canonical.png"        alt="canonical"      />    </div>    <div class="parragraf">      <h2 class="margin-block-end">        <strong>{{ "BOOLE.P4_TITLE" | translate }}</strong>      </h2>      <p [innerHTML]="\'BOOLE.P4_CONTENT_1\' | translate"></p>      <br />      <p [innerHTML]="\'BOOLE.P4_CONTENT_2\' | translate"></p>      <br />      <img        style="width: 320px"        class="image-character"        src="../../../assets/img/detail_page/boole/minterm_maxterm.png"        alt="canonical"      />    </div>  </div></section></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooleDetailComponent', 'selector': 'app-boole-detail'},{'name': 'BooleInfoComponent', 'selector': 'app-boole-info'},{'name': 'CalculatorComponent', 'selector': 'app-calculator'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'PropositionDetailComponent', 'selector': 'app-proposition-detail'},{'name': 'PropositionInfoComponent', 'selector': 'app-proposition-info'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'TableComponent', 'selector': 'app-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BooleDetailComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BooleDetailComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,1607 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>project-bachelor-software documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">project-bachelor-software documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CalculatorComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/calculator/calculator.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-calculator</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./calculator.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./calculator.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#booleType" >booleType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#errorMessage" >errorMessage</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#exceptionSubscription" >exceptionSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#inputCalculator" >inputCalculator</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isException" >isException</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#propositionType" >propositionType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#typeCalculator" >typeCalculator</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#calculateArrayData" >calculateArrayData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#clearErrorMessages" >clearErrorMessages</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy" >ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onAddCharacter" >onAddCharacter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onBack" >onBack</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onCalculate" >onCalculate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onClear" >onClear</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#validateCharacter" >validateCharacter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#iTypeCalculator" >iTypeCalculator</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#iTypeCalculator" >iTypeCalculator</a>
+                                </li>
+                                <li>
+                                    <a href="#valueCalculator" >valueCalculator</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(calculatorService: <a href="../injectables/CalculatorService.html" target="_self">CalculatorService</a>, conversionService: <a href="../injectables/ConversionService.html" target="_self">ConversionService</a>, navigationService: <a href="../injectables/NavigationService.html" target="_self">NavigationService</a>, translateService: TranslateService, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/calculator/calculator.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>calculatorService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CalculatorService.html" target="_self" >CalculatorService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>conversionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ConversionService.html" target="_self" >ConversionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>navigationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NavigationService.html" target="_self" >NavigationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iTypeCalculator"></a>
+                        <b>iTypeCalculator</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Calculator" target="_self" >Calculator</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/calculator/calculator.component.ts:22</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateArrayData"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>calculateArrayData</b></span>
+                        <a href="#calculateArrayData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>calculateArrayData(universalValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, usedVariables: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="105"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:105</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>universalValue</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>usedVariables</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>[][]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearErrorMessages"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>clearErrorMessages</b></span>
+                        <a href="#clearErrorMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>clearErrorMessages()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="155"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:155</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <span ><b>ngOnDestroy</b></span>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAddCharacter"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>onAddCharacter</b></span>
+                        <a href="#onAddCharacter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onAddCharacter(character: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>character</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBack"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>onBack</b></span>
+                        <a href="#onBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCalculate"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>onCalculate</b></span>
+                        <a href="#onCalculate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onCalculate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClear"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>onClear</b></span>
+                        <a href="#onClear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onClear()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validateCharacter"></a>
+                    <span class="name">
+                        <span class="modifier">Private</span>
+                        <span ><b>validateCharacter</b></span>
+                        <a href="#validateCharacter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>validateCharacter(character: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, lastCharacter: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/components/calculator/calculator.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>character</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>lastCharacter</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="booleType"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>booleType</b></span>
+                        <a href="#booleType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>booleType</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/components/calculator/calculator.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessage"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>errorMessage</b></span>
+                        <a href="#errorMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/calculator/calculator.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="exceptionSubscription"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>exceptionSubscription</b></span>
+                        <a href="#exceptionSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Subscription</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/calculator/calculator.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inputCalculator"></a>
+                    <span class="name">
+                        <span ><b>inputCalculator</b></span>
+                        <a href="#inputCalculator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ElementRef&lt;HTMLInputElement&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;inputCalculator&#x27;, {static: false})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/calculator/calculator.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isException"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>isException</b></span>
+                        <a href="#isException"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/calculator/calculator.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="propositionType"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>propositionType</b></span>
+                        <a href="#propositionType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>propositionType</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/calculator/calculator.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="typeCalculator"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>typeCalculator</b></span>
+                        <a href="#typeCalculator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#Calculator" target="_self" >Calculator</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>booleType</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/calculator/calculator.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iTypeCalculator"></a>
+                        <span class="name"><b>iTypeCalculator</b><a href="#iTypeCalculator"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>iTypeCalculator(type: <a href="../undefineds/Calculator.html" target="_self">Calculator</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/calculator/calculator.component.ts:22</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>type</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="../miscellaneous/typealiases.html#Calculator" target="_self" >Calculator</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="valueCalculator"></a>
+                        <span class="name"><b>valueCalculator</b><a href="#valueCalculator"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>valueCalculator()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/components/calculator/calculator.component.ts:62</a></div>
+                                </td>
+                            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>valueCalculator(newValue: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/components/calculator/calculator.component.ts:66</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>newValue</td>
+                                                    
+                                                            <td>
+                                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component, ElementRef, Input, Renderer2, ViewChild, OnInit, OnDestroy, ViewEncapsulation,
+} from &#x27;@angular/core&#x27;
+import { NavigationService } from &#x27;@services/navigation.service&#x27;
+import {
+  booleType,
+  Calculator, closeParenthesesSymbols, negativeSymbols,
+  openParenthesesSymbols, operatorSymbols, propositionType, variableSymbols,
+} from &#x27;@models/calculator.dto&#x27;
+import { CalculatorService } from &#x27;@services/calculator.service&#x27;
+import { Subscription } from &#x27;rxjs&#x27;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;
+import { ConversionService } from &#x27;@services/conversion.service&#x27;
+
+@Component({
+  selector: &#x27;app-calculator&#x27;,
+  templateUrl: &#x27;./calculator.component.html&#x27;,
+  styleUrls: [&#x27;./calculator.component.scss&#x27;],
+  encapsulation: ViewEncapsulation.None,
+})
+export class CalculatorComponent implements OnInit, OnDestroy {
+  @Input() public set iTypeCalculator(type: Calculator) {
+    this.onClear()
+    this.typeCalculator &#x3D; type
+  }
+
+  @ViewChild(&#x27;inputCalculator&#x27;, { static: false }) inputCalculator: ElementRef&lt;HTMLInputElement&gt;
+
+  public readonly booleType &#x3D; booleType
+
+  public readonly propositionType &#x3D; propositionType
+
+  public typeCalculator: Calculator &#x3D; booleType
+
+  public errorMessage &#x3D; &#x27;&#x27;
+
+  public isException &#x3D; false
+
+  private exceptionSubscription: Subscription
+
+  constructor(
+    private readonly calculatorService: CalculatorService,
+    private readonly conversionService: ConversionService,
+    private readonly navigationService: NavigationService,
+    private readonly translateService: TranslateService,
+    private readonly renderer: Renderer2,
+  ) {}
+
+  ngOnInit(): void {
+    this.exceptionSubscription &#x3D; this.calculatorService.$exception.subscribe(() &#x3D;&gt; {
+      this.errorMessage &#x3D; &#x27;&#x27;
+      this.isException &#x3D; true
+    })
+  }
+
+  ngOnDestroy(): void {
+    if (this.exceptionSubscription) {
+      this.exceptionSubscription.unsubscribe()
+    }
+  }
+
+  get valueCalculator(): string {
+    return this.inputCalculator.nativeElement.value
+  }
+
+  set valueCalculator(newValue: string) {
+    if (this.inputCalculator?.nativeElement) {
+      this.renderer.setProperty(this.inputCalculator.nativeElement, &#x27;value&#x27;, newValue)
+    }
+  }
+
+  public onAddCharacter(character: string): void {
+    if (this.valueCalculator) {
+      const oldValue &#x3D; this.valueCalculator
+      const lastCharacter &#x3D; oldValue.charAt(oldValue.length - 1)
+      if (this.validateCharacter(character, lastCharacter)) {
+        this.valueCalculator &#x3D; oldValue + character
+      }
+    } else {
+      this.valueCalculator &#x3D; character
+    }
+  }
+
+  public onBack(): void {
+    this.valueCalculator &#x3D; this.valueCalculator.slice(0, -1)
+    this.clearErrorMessages()
+  }
+
+  public onClear(): void {
+    this.valueCalculator &#x3D; &#x27;&#x27;
+    this.clearErrorMessages()
+  }
+
+  public onCalculate(): void {
+    if (this.valueCalculator) {
+      const universalValue &#x3D; this.conversionService.convertToUniversal(this.valueCalculator)
+      const usedVariables &#x3D; this.calculatorService.getUsedVariables(universalValue)
+      if (usedVariables.length) {
+        const arrayData &#x3D; this.calculateArrayData(universalValue, usedVariables)
+        this.navigationService.toResult(this.typeCalculator, arrayData)
+      }
+    }
+  }
+
+  private calculateArrayData(universalValue: string, usedVariables: string[]): string[][] {
+    // Se crea el primer nivel con los títulos
+    const headData &#x3D; this.calculatorService.getHeadArrayData(universalValue, usedVariables)
+    let arrayData: string[][] &#x3D; [headData]
+    // Crear entradas vacías de los arrays
+    arrayData &#x3D; this.calculatorService.createResultEntries(arrayData, usedVariables)
+    // Se Rellena la matriz con valores verdaderos o falsos de cada variable
+    arrayData &#x3D; this.calculatorService.fillInitialValues(arrayData, usedVariables)
+    // Calcula los resultados de la tabla
+    arrayData &#x3D; this.calculatorService.calculateArrayData(arrayData)
+    if (this.typeCalculator &#x3D;&#x3D;&#x3D; propositionType) {
+      // En caso de ser una proposición, hay que volver a pasar a proposición la tabla
+      arrayData &#x3D; this.conversionService.convertToProposition(arrayData)
+    }
+    return arrayData
+  }
+
+  private validateCharacter(character: string, lastCharacter: string): boolean {
+    let isValid &#x3D; true
+    let errorMessage: string
+    this.clearErrorMessages()
+    if (negativeSymbols.includes(lastCharacter)) {
+      // Después de un símbolo negativo solo se puede poner una variable
+      errorMessage &#x3D; this.translateService.instant(&#x27;ERROR.AFTER_NEGATIVE&#x27;)
+      isValid &#x3D; variableSymbols.includes(character) || openParenthesesSymbols &#x3D;&#x3D;&#x3D; character
+    } else if (operatorSymbols.includes(lastCharacter)) {
+      // Después de un operador solo puede ir una variable, símbolo negativo o una apertura de paréntesis
+      errorMessage &#x3D; this.translateService.instant(&#x27;ERROR.AFTER_OPERATOR&#x27;)
+      isValid &#x3D; variableSymbols.includes(character)
+              || character &#x3D;&#x3D;&#x3D; openParenthesesSymbols || negativeSymbols.includes(character)
+    } else if (variableSymbols.includes(lastCharacter)) {
+      // Después de una variable solo puede ir un operador o cierre de paréntesis
+      errorMessage &#x3D; this.translateService.instant(&#x27;ERROR.AFTER_VARIABLE&#x27;)
+      isValid &#x3D; operatorSymbols.includes(character) || closeParenthesesSymbols &#x3D;&#x3D;&#x3D; character
+    } else if (openParenthesesSymbols &#x3D;&#x3D;&#x3D; lastCharacter) {
+      // Después de un inicio de paréntesis solo puede ir un símbolo negativo, una apertura de paréntesis o variable
+      errorMessage &#x3D; this.translateService.instant(&#x27;ERROR.AFTER_OPEN_PARENTHESES&#x27;)
+      isValid &#x3D; negativeSymbols.includes(character) || variableSymbols.includes(character)
+                || openParenthesesSymbols &#x3D;&#x3D;&#x3D; character
+    } else if (closeParenthesesSymbols &#x3D;&#x3D;&#x3D; lastCharacter) {
+      // Después de un cierre de paréntesis solo puede ir un operador o cierre de paréntesis
+      errorMessage &#x3D; this.translateService.instant(&#x27;ERROR.AFTER_CLOSE_PARENTHESES&#x27;)
+      isValid &#x3D; operatorSymbols.includes(character) || closeParenthesesSymbols &#x3D;&#x3D;&#x3D; character
+    }
+    if (!isValid) {
+      this.errorMessage &#x3D; errorMessage
+    }
+    return isValid
+  }
+
+  private clearErrorMessages(): void {
+    this.errorMessage &#x3D; &#x27;&#x27;
+    this.isException &#x3D; false
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;calculator box flex-container-column flex-row-gap&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;input
+      #inputCalculator
+      class&#x3D;&quot;flex-full input&quot;
+      type&#x3D;&quot;text&quot;
+      onCopy&#x3D;&quot;return false&quot;
+      onDrag&#x3D;&quot;return false&quot;
+      onDrop&#x3D;&quot;return false&quot;
+      onPaste&#x3D;&quot;return false&quot;
+      onkeypress&#x3D;&quot;return false&quot;
+      autocomplete&#x3D;&quot;off&quot;
+    /&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;flex-half flex-container-row flex-column-gap&quot;&gt;
+      &lt;button class&#x3D;&quot;flex-half btn-clear button is-danger&quot; (click)&#x3D;&quot;onClear()&quot;&gt;
+        AC
+      &lt;/button&gt;
+      &lt;button class&#x3D;&quot;flex-half btn-back button is-warning&quot; (click)&#x3D;&quot;onBack()&quot;&gt;
+        DEL
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;button
+      class&#x3D;&quot;flex-half button is-success&quot;
+      (click)&#x3D;&quot;onCalculate()&quot;
+      [disabled]&#x3D;&quot;inputCalculator.value.length &#x3D;&#x3D;&#x3D; 0&quot;
+    &gt;
+      &#x3D;
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;button
+      class&#x3D;&quot;flex-quarter button&quot;
+      (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;a&#x27; : &#x27;p&#x27;)&quot;
+    &gt;
+      {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;a&quot; : &quot;p&quot; }}
+    &lt;/button&gt;
+    &lt;button
+      class&#x3D;&quot;flex-quarter button&quot;
+      (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;b&#x27; : &#x27;q&#x27;)&quot;
+    &gt;
+      {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;b&quot; : &quot;q&quot; }}
+    &lt;/button&gt;
+    &lt;button
+      class&#x3D;&quot;flex-quarter button&quot;
+      (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;c&#x27; : &#x27;r&#x27;)&quot;
+    &gt;
+      {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;c&quot; : &quot;r&quot; }}
+    &lt;/button&gt;
+    &lt;button
+      class&#x3D;&quot;flex-quarter button&quot;
+      (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;d&#x27; : &#x27;s&#x27;)&quot;
+    &gt;
+      {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;d&quot; : &quot;s&quot; }}
+    &lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;button
+      class&#x3D;&quot;flex-half button&quot;
+      (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;¬&#x27; : &#x27;~&#x27;)&quot;
+    &gt;
+      {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;¬&quot; : &quot;~&quot; }}
+    &lt;/button&gt;
+    &lt;div class&#x3D;&quot;flex-half flex-container-row flex-column-gap&quot;&gt;
+      &lt;button
+        class&#x3D;&quot;flex-half button&quot;
+        (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;x&#x27; : &#x27;^&#x27;)&quot;
+      &gt;
+        {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;x&quot; : &quot;^&quot; }}
+      &lt;/button&gt;
+      &lt;button
+        class&#x3D;&quot;flex-half button&quot;
+        (click)&#x3D;&quot;onAddCharacter(typeCalculator &#x3D;&#x3D;&#x3D; booleType ? &#x27;+&#x27; : &#x27;v&#x27;)&quot;
+      &gt;
+        {{ typeCalculator &#x3D;&#x3D;&#x3D; &quot;boole&quot; ? &quot;+&quot; : &quot;v&quot; }}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;button class&#x3D;&quot;flex-half button&quot; (click)&#x3D;&quot;onAddCharacter(&#x27;(&#x27;)&quot;&gt;(&lt;/button&gt;
+    &lt;button class&#x3D;&quot;flex-half button&quot; (click)&#x3D;&quot;onAddCharacter(&#x27;)&#x27;)&quot;&gt;)&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;notification is-warning is-size-5&quot; *ngIf&#x3D;&quot;errorMessage.length&quot;&gt;
+  {{ errorMessage }}
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;notification is-danger is-size-5&quot; *ngIf&#x3D;&quot;isException&quot;&gt;
+  {{ &quot;ERROR.GENERAL&quot; | translate }}
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./calculator.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.calculator {
+    min-width: 200px;
+    max-width: 600px;
+    text-transform: uppercase;
+    padding: 20px;
+
+    .row {
+        display: flex;
+        flex-direction: row;
+        column-gap: 10px;
+
+        * {
+            flex-grow: 1;
+        }
+        input {
+            flex-basis: 100%;
+            &amp;:disabled {
+                background-color: white;
+            }
+        }
+        button {
+            cursor: pointer;
+        }
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="calculator box flex-container-column flex-row-gap">  <div class="row">    <input      #inputCalculator      class="flex-full input"      type="text"      onCopy="return false"      onDrag="return false"      onDrop="return false"      onPaste="return false"      onkeypress="return false"      autocomplete="off"    />  </div>  <div class="row">    <div class="flex-half flex-container-row flex-column-gap">      <button class="flex-half btn-clear button is-danger" (click)="onClear()">        AC      </button>      <button class="flex-half btn-back button is-warning" (click)="onBack()">        DEL      </button>    </div>    <button      class="flex-half button is-success"      (click)="onCalculate()"      [disabled]="inputCalculator.value.length === 0"    >      =    </button>  </div>  <div class="row">    <button      class="flex-quarter button"      (click)="onAddCharacter(typeCalculator === booleType ? \'a\' : \'p\')"    >      {{ typeCalculator === "boole" ? "a" : "p" }}    </button>    <button      class="flex-quarter button"      (click)="onAddCharacter(typeCalculator === booleType ? \'b\' : \'q\')"    >      {{ typeCalculator === "boole" ? "b" : "q" }}    </button>    <button      class="flex-quarter button"      (click)="onAddCharacter(typeCalculator === booleType ? \'c\' : \'r\')"    >      {{ typeCalculator === "boole" ? "c" : "r" }}    </button>    <button      class="flex-quarter button"      (click)="onAddCharacter(typeCalculator === booleType ? \'d\' : \'s\')"    >      {{ typeCalculator === "boole" ? "d" : "s" }}    </button>  </div>  <div class="row">    <button      class="flex-half button"      (click)="onAddCharacter(typeCalculator === booleType ? \'¬\' : \'~\')"    >      {{ typeCalculator === "boole" ? "¬" : "~" }}    </button>    <div class="flex-half flex-container-row flex-column-gap">      <button        class="flex-half button"        (click)="onAddCharacter(typeCalculator === booleType ? \'x\' : \'^\')"      >        {{ typeCalculator === "boole" ? "x" : "^" }}      </button>      <button        class="flex-half button"        (click)="onAddCharacter(typeCalculator === booleType ? \'+\' : \'v\')"      >        {{ typeCalculator === "boole" ? "+" : "v" }}      </button>    </div>  </div>  <div class="row">    <button class="flex-half button" (click)="onAddCharacter(\'(\')">(</button>    <button class="flex-half button" (click)="onAddCharacter(\')\')">)</button>  </div></div><div class="notification is-warning is-size-5" *ngIf="errorMessage.length">  {{ errorMessage }}</div><div class="notification is-danger is-size-5" *ngIf="isException">  {{ "ERROR.GENERAL" | translate }}</div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BooleDetailComponent', 'selector': 'app-boole-detail'},{'name': 'BooleInfoComponent', 'selector': 'app-boole-info'},{'name': 'CalculatorComponent', 'selector': 'app-calculator'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'PropositionDetailComponent', 'selector': 'app-proposition-detail'},{'name': 'PropositionInfoComponent', 'selector': 'app-proposition-info'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'TableComponent', 'selector': 'app-table'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CalculatorComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CalculatorComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
