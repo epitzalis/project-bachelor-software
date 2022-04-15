@@ -1,0 +1,71 @@
+{
+    "COMMONS": {
+        "TITLE": "Mathematisch-akademisches Modul über Wahrheitstabellen",
+        "NAME_DEGREE": "Bachelor in Softwareanwendungstechnik (Técnicas de Aplicaciones de Software)",
+        "AUTHOR": "Efisio Pitzalis Morillas",
+        "UNIVERSITY": "La Salle Universität Ramón Llull",
+        "BOOLE": "Boole",
+        "PROPOSITION": "Proposition"
+    },
+    "ERROR": {
+        "AFTER_NEGATIVE": "Nach einem negativen Symbol kann nur eine Variable eingegeben werden",
+        "AFTER_OPERATOR": "Auf einen Operator kann nur eine Variable oder Die Öffnung einer Klammer folgen",
+        "AFTER_VARIABLE": "Auf eine Variable kann nur ein Operator oder der Schluss einer Klammer folgen",
+        "AFTER_OPEN_PARENTHESES": "Nach der Öffnung einer Klammer kann nur ein negatives Symbol, die Öffnung einer Klammer oder eine Variable folgen",
+        "AFTER_CLOSE_PARENTHESES": "Nach Schluss einer Klammer kann nur ein negatives Symbol, die Öffnung einer Klammer oder eine Variable folgen",
+        "GENERAL": "Die eingegebene Sequenz ist inkorrekt"
+    },
+    "HOME": {
+        "HERO_TITLE": "Was kann man mit diesem mathematischen Modul machen?",
+        "HERO_SUBTITLE": "Es erlaubt Lösungen von Wahrheitstabellen. Im Fall von Propositionenberechnungen gibt es an, ob es eine Tautologie, eine Kontradiktion oder eine Kontingenz ist. Im Fall von Boolescher Algebra werden der Maxterm und der Minterm berechnet."
+    },
+    "BOOLE": {
+        "HERO_TITLE": "Boolesche Algebra",
+        "P1_TITLE": "Boolesche Algebra",
+        "P1_CONTENT_1": "Die Boolesche Algebra ist eine spezielle algebraische Struktur, die hauptsächlich in der digitalen Elektronik verwendet wird, um Logikschaltungen zu simplifizieren",
+        "P1_CONTENT_2": "Die Boolesche Logik verwendet nur zwei Schaltungszustände - 1 und 0. 1 repräsentiert wahr und 0 repräsentiert falsch",
+        "P2_TITLE": "Wahrheitstabelle",
+        "P2_CONTENT_1": "Wahrheitstabellen sind Tabellen, die die möglichen Ergebnisse einer Logikschaltung repräsentieren, basierend auf den Eingabewerten. Auf dem folgenden Bild sehen wir eine Wahrheitstabelle, die uns die möglichen Ergebnisse der Funktion \"q\" für die Eingabewerte \"a\" und \"b\" zeigt",
+        "P3_TITLE": "Kanonische Form",
+        "P3_CONTENT_1": "Dies ist eine Boolesche Funktion, bei der alle Terme Summen oder Produkte der Eingabevariablen sind. Die kanonische Form simplifiziert elektrische Schaltungen. Dank der obigen Wahrheitstabelle ist es einfacher die folgende Kanonische Form einer Funktion zu erhalten",
+        "P4_TITLE": "Minterm und Maxterm",
+        "P4_CONTENT_1": "Der <strong>Minterm</strong> ist die Summe der Funktionsterme und Produkte der Variablen innerhalb der verschiedenen Terme. Er gibt das Ergebnis einer Funktion gleich eins (q=1) an.",
+        "P4_CONTENT_2": "Der <strong>Maxterm</strong> ist das Produkt der Terme der Funktion und die Summe der Variablen innerhalb der verschiedenen Terme. Er gibt das Ergebnis einer Funktion gleich null (q=0) an."
+    },
+    "PROPOSITION": {
+        "HERO_TITLE": "Propositionenberechnungen",
+        "P1_TITLE": "Propositionenberechnungen",
+        "P1_CONTENT_1": "Eine Proposition ist jeglicher Term, der einen definierten Wahrheitswert hat, entweder wahr oder falsch. Zum Beispiel:",
+        "P1_CONTENT_2": "Es regnet. Diese Proposition nennen wir <strong>\"p\"</strong>, und sie kann wahr oder falsch sein.",
+        "P2_TITLE": "Wahrheitstabellen",
+        "P2_CONTENT_1": "Wahrheitstabellen sind Tabellen, die die möglichen Ergebnisse einer Propositionenberechnung in Abhängigkeit von den Eingabewerten zeigt. Auf dem folgenden Bild können wir eine Wahrheitstabelle sehen, die uns die möglichen Ergebnisse von <strong>p^q</strong> zeigt.",
+        "P3_TITLE": "Tautologie, Kontradiktion und Kontingenz",
+        "P3_CONTENT_1": "Die <strong>Tautologie</strong> tritt auf, wenn alle Ergebnisse einer Wahrheitstabelle wahr sind.",
+        "P3_CONTENT_2": "Die <strong>Kontradiktion</strong> tritt auf, wenn alle Ergebnisse einer Wahrheitstabelle falsch sind.",
+        "P3_CONTENT_3": "Die <strong>Kontingenz</strong> tritt auf, wenn die Ergebnisse einer Wahrheitstabelle sowohl wahr als auch falsch sind.",
+        "P3_CONTENT_4": "Beispiel einer Kontingenz:"
+    },
+    "RESULT": {
+        "OTHER_CALCULATION": "Eine weitere Berechnung durchführen",
+        "BOOLE": "Ergebnis der Booleschen Algebra",
+        "PROPOSITION": "Ergebnis der Propositionenberechnung",
+        "CONTRADICTION": "Diese Wahrheitstabelle ist eine Kontradiktion",
+        "TAUTOLOGY": "Diese Wahrheitstabelle ist eine Tautologie",
+        "CONTINGENCY": "Diese Wahrheitstabelle ist eine Kontingenz"
+    },
+    "LANGUAGE": {
+        "ES": "Spanisch",
+        "CA": "Katalanisch",
+        "EN": "Englisch",
+        "DE": "Deutsch"
+    },
+    "HEADER": {
+        "CALCULATION": "Rechner",
+        "BOOLE": "Boolesche Algebra",
+        "PROPOSITION": "Propositionenberechnung"
+    },
+    "FOOTER": {
+        "TFG_BY": "TFG entwickelt von",
+        "TFG_TO": "für"
+    }
+}
