@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng test --no-watch && ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "eslint -c .eslintrc.json --ext .ts src/app",
     "test": "ng test",
