@@ -35,7 +35,7 @@
     "PROPOSITION": {
         "HERO_TITLE": "Cálculo proposicional",
         "P1_TITLE": "Cálculo proposicional",
-        "P1_CONTENT_1": "Una proposición es cualquier frase que tenga un valor de verdad definodo, ya sea verdadero o falso. Por ejemplo:",
+        "P1_CONTENT_1": "Una proposición es cualquier frase que tenga un valor de verdad definido, ya sea verdadero o falso. Por ejemplo:",
         "P1_CONTENT_2": "Está lloviendo. A esta proposición podemos llamarle <strong>\"p\"</strong>, y podrá ser verdadera o falsa.",
         "P2_TITLE": "Tabla de la verdad",
         "P2_CONTENT_1": "Son tablas que representan las posibles salidas que puede tener un cálculo proposicional en función de unos valores de entrada. En la siguiente imagen podemos ver una tabla de la verdad que nos muestra los posibles resultados de <strong>p^q</strong>.",
