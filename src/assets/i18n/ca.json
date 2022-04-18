@@ -9,11 +9,11 @@
     },
     "ERROR": {
         "AFTER_NEGATIVE": "Després d'un símbol negatiu només es pot posar una variable",
-        "AFTER_OPERATOR": "Després d'un operador només podeu anar una variable o una obertura de parèntesis",
-        "AFTER_VARIABLE": "Després d'una variable només podeu anar un operador o tancament de parèntesis",
-        "AFTER_OPEN_PARENTHESES": "Després d'un inici de parèntesi només podeu anar un símbol negatiu, una obertura de parèntesis o variable",
-        "AFTER_CLOSE_PARENTHESES": "Després d'un tancament de parèntesis només podeu anar un símbol negatiu, una obertura de parèntesis o variable",
-        "GENERAL": "Ha introduït una sentència incorrecta"
+        "AFTER_OPERATOR": "Després d'un operador només pot anar una variable o una obertura de parèntesis",
+        "AFTER_VARIABLE": "Després d'una variable només pot anar un operador o un tancament de parèntesis",
+        "AFTER_OPEN_PARENTHESES": "Després d'un inici de parèntesi només pot anar un símbol negatiu, una obertura de parèntesis o variable",
+        "AFTER_CLOSE_PARENTHESES": "Després d'un tancament de parèntesis només pot anar un símbol negatiu, una obertura de parèntesis o variable",
+        "GENERAL": "Heu introduït una sentència incorrecta"
     },
     "HOME": {
         "HERO_TITLE": "Què pot fer aquest mòdul matemàtic?",
@@ -23,11 +23,11 @@
         "HERO_TITLE": "Àlgebra de boole",
         "P1_TITLE": "Àlgebra de boole",
         "P1_CONTENT_1": "És una branca especial de l'àlgebra que es fa servir principalment en electrònica digital per simplificar els circuits lògics",
-        "P1_CONTENT_2": "La lògica booleana només permet dos estats del circuit representats per 1 o 0, on 1 representa l'estat veritable i 0 representa l'estat fals",
+        "P1_CONTENT_2": "La lògica booleana només permet dos estats del circuit representats per 1 o 0, on 1 representa l'estat verdader i 0 representa l'estat fals",
         "P2_TITLE": "Taula de la veritat",
         "P2_CONTENT_1": "Són taules que representen les possibles sortides que pot tenir un circuit lògic segons uns valors d'entrada. A la següent imatge podem veure una taula de la veritat que ens mostra els possibles resultats de la funció \"q\" per a una entrada \"a\" i \"b\"",
         "P3_TITLE": "Forma canònica",
-        "P3_CONTENT_1": "És una funció booleana on tots els termes són sumes o productes de totes les variables d'entrada. Amb la forma canònica es poden simplificar circuits electrònics. Gràcies a l'anterior taula de la veritat, és més senzill obtenir la forma canònica següent d'una funció",
+        "P3_CONTENT_1": "És una funció booleana on tots els termes són sumes o productes de totes les variables d'entrada. Amb la forma canònica es poden simplificar circuits electrònics. Gràcies a l'anterior taula de la veritat, és més senzill obtenir la següent forma canònica d'una funció",
         "P4_TITLE": "Minterm i Maxterm",
         "P4_CONTENT_1": "El <strong>minterm</strong> és la suma de termes de la funció i del producte de les variables dins dels diferents termes. Indica el resultat de la funció igual a un (q=1) de forma directa.",
         "P4_CONTENT_2": "El <strong>maxterm</strong> és el producte de termes de la funció i suma de les variables dins dels diferents termes. Indica el resultat de la funció igual a zero (q=0) de forma directa."
@@ -35,14 +35,14 @@
     "PROPOSITION": {
         "HERO_TITLE": "Càlcul proposicional",
         "P1_TITLE": "Càlcul proposicional",
-        "P1_CONTENT_1": "Una proposició és qualsevol frase que tingui un valor de veritat definit, ja sigui veritable o fals. Per exemple:",
-        "P1_CONTENT_2": "Està plovent. A aquesta proposició podem anomenar <strong>\"p\"</strong>, i podrà ser veritable o falsa.",
+        "P1_CONTENT_1": "Una proposició és qualsevol frase que tingui un valor de veritat definit, ja sigui verdader o fals. Per exemple:",
+        "P1_CONTENT_2": "Està plovent. A aquesta proposició la podem anomenar <strong>\"p\"</strong>, i podrà ser verdadera o falsa.",
         "P2_TITLE": "Taula de la veritat",
         "P2_CONTENT_1": "Són taules que representen les possibles sortides que poden tenir un càlcul proposicional segons uns valors d'entrada. A la següent imatge podem veure una taula de la veritat que ens mostra els possibles resultats de <strong>p^q</strong>.",
         "P3_TITLE": "Tautologia, contradicció i contingència",
-        "P3_CONTENT_1": "La <strong>tautologia</strong> té lloc quan tots els resultats de la taula de la veritat són veritables.",
+        "P3_CONTENT_1": "La <strong>tautologia</strong> té lloc quan tots els resultats de la taula de la veritat són verdaders.",
         "P3_CONTENT_2": "La <strong>contradicció</strong> té lloc quan tots els resultats de la taula de veritat són falsos.",
-        "P3_CONTENT_3": "La <strong>contingencia</strong> tiene lugar cuando en los resultados de tabla de la verdad encontramos valores verdaderos y falsos.",
+        "P3_CONTENT_3": "La <strong>contingència</strong> te lloc quan en els resultats de la taula de la veritat trobem valors verdaders i falsos.",
         "P3_CONTENT_4": "Exemple de contingència:"
     },
     "RESULT": {
